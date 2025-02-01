@@ -5,7 +5,8 @@
     "@ohos/axios": "^2.2.4",
     "ohos_smart_dialog": "^1.7.5",
     "@nzy/logger": "^1.0.7",
-    "@abner/lithe_refresh": "^1.0.0"
+    "@abner/lithe_refresh": "^1.0.0",
+    "@pura/harmony-utils": "^1.2.7"
   },
   "devDependencies": {
     "@ohos/hypium": "1.0.19",

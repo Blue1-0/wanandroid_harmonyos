@@ -1,5 +1,7 @@
 import HomePageComponent from '../components/HomePageComponent';
 import * as size from '../theme/size'
+import window from '@ohos.window';
+import { DisplayUtil } from '@pura/harmony-utils';
 
 @Entry
 @Component
@@ -7,8 +9,9 @@ struct MainPage {
   @State activeIndex: number = 0;
   @State isInitPage: Array<boolean> = [true, false, false, false];
 
-  //测试提交
   build() {
+
+
     Column() {
 
       Tabs({
@@ -16,26 +19,35 @@ struct MainPage {
         barPosition: BarPosition.End
       }) {
         TabContent() {
-          HomePageComponent()
+          HomePageComponent({
+            mHeight: this.calcHeight()
+          })
         }
+        // .padding({ bottom: 100 })
+        // .margin({ bottom: 100 })
+        .height(this.calcHeight())
         .tabBar(this.tabBuilder(0, '首页', $r('app.media.icon_home_active'), $r('app.media.icon_home')))
 
         TabContent() {
           this.TestItem('项目')
         }
+        .height(this.calcHeight())
         .tabBar(this.tabBuilder(1, '项目', $r('app.media.icon_home_active'), $r('app.media.icon_home')))
 
         TabContent() {
           this.TestItem('知识体系')
         }
+        .height(this.calcHeight())
         .tabBar(this.tabBuilder(2, '知识体系', $r('app.media.icon_home_active'), $r('app.media.icon_home')))
 
         TabContent() {
           this.TestItem('我的')
         }
+        .height(this.calcHeight())
         .tabBar(this.tabBuilder(3, '我的', $r('app.media.icon_home_active'), $r('app.media.icon_home')))
       }
-      .barHeight(size.vp_70)
+      .barHeight(70)
+      .barWidth('100%')
       .barMode(BarMode.Fixed)
       .onChange((index) => {
         this.isInitPage[index] = true;
@@ -45,6 +57,12 @@ struct MainPage {
     }
     .width('100%')
     .height('100%')
+  }
+
+  calcHeight(): number {
+    const barHeightValue = 70; // 这里的 70 对应 barHeight(size.vp_70)
+    const screenHeight: number = DisplayUtil.getHeight() - barHeightValue; // 获取屏幕高度
+    return screenHeight
   }
 
   @Builder
