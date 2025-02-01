@@ -3,7 +3,8 @@
 #### 介绍
 玩Android的harmonyos版本，目前持续开发中...
 #### 软件架构
-harmonyos5.0
+harmonyos5.0 
+
 deveco 5.0
 
 
