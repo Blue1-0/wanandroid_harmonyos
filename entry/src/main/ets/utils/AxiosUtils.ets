@@ -70,3 +70,5 @@ function hideLoading() {
   SmartDialog.dismiss()
 }
 
+
+

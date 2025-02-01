@@ -76,3 +76,22 @@ export interface ArticleEntityDatas {
   zan: number;
 
 }
+
+
+export interface ProjectTreeEntity {
+  articleList: object[];
+  author: string;
+  children: object[];
+  courseId: string;
+  cover: string;
+  desc: string;
+  id: number;
+  lisense: string;
+  lisenseLink: string;
+  name: string;
+  order: number;
+  parentChapterId: number;
+  type: number;
+  userControlSetTop: boolean;
+  visible: number;
+}

@@ -2,6 +2,7 @@ import HomePageComponent from '../components/HomePageComponent';
 import * as size from '../theme/size'
 import window from '@ohos.window';
 import { DisplayUtil } from '@pura/harmony-utils';
+import ProjectsPageComponent from '../components/ProjectsPageComponent';
 
 @Entry
 @Component
@@ -29,7 +30,7 @@ struct MainPage {
         .tabBar(this.tabBuilder(0, '首页', $r('app.media.icon_home_active'), $r('app.media.icon_home')))
 
         TabContent() {
-          this.TestItem('项目')
+         ProjectsPageComponent()
         }
         .height(this.calcHeight())
         .tabBar(this.tabBuilder(1, '项目', $r('app.media.icon_home_active'), $r('app.media.icon_home')))
