@@ -1,0 +1,14 @@
+export default class RoutePath {
+  /**
+   * index
+   */
+  static IndexPage = "pages/Index";
+  /**
+   * login
+   */
+  static LoginPage = "pages/LoginPage";
+  /**
+   * main
+   */
+  static MainPage = "pages/MainPage";
+}

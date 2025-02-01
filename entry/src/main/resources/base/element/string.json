@@ -1,0 +1,32 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "module description"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "wanandroid-harmony"
+    },
+    {
+      "name": "app_title",
+      "value": "wanandroid-harmony"
+    },
+    {
+      "name": "no_record",
+      "value": "暂无数据"
+    },
+    {
+      "name": "confirm_text",
+      "value": "确认"
+    },
+    {
+      "name": "cancel_text",
+      "value": "取消"
+    }
+  ]
+}

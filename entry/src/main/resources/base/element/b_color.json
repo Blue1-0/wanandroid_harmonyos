@@ -1,0 +1,488 @@
+{
+  "color": [
+    {
+      "name": "del_bg_color_gray",
+      "value": "#E0E0E0"
+    },
+    {
+      "name": "del_bg_color_rad",
+      "value": "#DE1C24"
+    },
+    {
+      "name": "text_line_color",
+      "value": "#ffD8D8D8"
+    },
+    {
+      "name": "refreshing_color",
+      "value": "#0a0"
+    },
+    {
+      "name": "transparent",
+      "value": "#00000000"
+    },
+    {
+      "name": "transparent80",
+      "value": "#80000000"
+    },
+    {
+      "name": "purple",
+      "value": "#63327E"
+    },
+    {
+      "name": "green",
+      "value": "#5FB446"
+    },
+    {
+      "name": "blue",
+      "value": "#0071CE"
+    },
+    {
+      "name": "red",
+      "value": "#DE1C24"
+    },
+    {
+      "name": "yellow",
+      "value": "#FFC220"
+    },
+    {
+      "name": "cyan",
+      "value": "#3EC5E6"
+    },
+    {
+      "name": "gray",
+      "value": "#CECECE"
+    },
+    {
+      "name": "search_normal_color",
+      "value": "#0071CE"
+    },
+    {
+      "name": "search_press_color",
+      "value": "#800071CE"
+    },
+    {
+      "name": "CD0021B",
+      "value": "#D0021B"
+    },
+    {
+      "name": "CE8808D",
+      "value": "#E8808D"
+    },
+    {
+      "name": "C4D000000",
+      "value": "#4D000000"
+    },
+    {
+      "name": "CFFE5F3FF",
+      "value": "#FFE5F3FF"
+    },
+    {
+      "name": "CFFF8F8F8",
+      "value": "#FFF8F8F8"
+    },
+    {
+      "name": "CFF282828",
+      "value": "#FF282828"
+    },
+    {
+      "name": "C0071CE",
+      "value": "#0071CE"
+    },
+    {
+      "name": "C9B9B9B",
+      "value": "#9B9B9B"
+    },
+    {
+      "name": "C1A2C2C2C",
+      "value": "#1A2C2C2C"
+    },
+    {
+      "name": "C282828",
+      "value": "#282828"
+    },
+    {
+      "name": "CF8F8F8",
+      "value": "#F8F8F8"
+    },
+    {
+      "name": "C9A9A9A",
+      "value": "#9A9A9A"
+    },
+    {
+      "name": "color_FFFFFF",
+      "value": "#FFFFFF"
+    },
+    {
+      "name": "C5D5D5D",
+      "value": "#5D5D5D"
+    },
+    {
+      "name": "CEEEEEE",
+      "value": "#EEEEEE"
+    },
+    {
+      "name": "CE6E6E6",
+      "value": "#E6E6E6"
+    },
+    {
+      "name": "CE0E0E0",
+      "value": "#E0E0E0"
+    },
+    {
+      "name": "C595959",
+      "value": "#595959"
+    },
+    {
+      "name": "C222427",
+      "value": "#222427"
+    },
+    {
+      "name": "CC0D0E10",
+      "value": "#CC0D0E10"
+    },
+    {
+      "name": "C0165B8",
+      "value": "#0165B8"
+    },
+    {
+      "name": "CDCE0E4",
+      "value": "#DCE0E4"
+    },
+    {
+      "name": "C0065B9",
+      "value": "#0065B9"
+    },
+    {
+      "name": "CD6ECFF",
+      "value": "#D6ECFF"
+    },
+    {
+      "name": "C5FB446",
+      "value": "#5FB446"
+    },
+    {
+      "name": "CC9E6FF",
+      "value": "#C9E6FF"
+    },
+    {
+      "name": "CDE1C24",
+      "value": "#DE1C24"
+    },
+    {
+      "name": "ffCDE1C24",
+      "value": "#11DE1C24"
+    },
+    {
+      "name": "C828282",
+      "value": "#828282"
+    },
+    {
+      "name": "CEA6400",
+      "value": "#EA6400"
+    },
+    {
+      "name": "CE7E7E7",
+      "value": "#E7E7E7"
+    },
+    {
+      "name": "CBFBFBF",
+      "value": "#BFBFBF"
+    },
+    {
+      "name": "CCECECE",
+      "value": "#CECECE"
+    },
+    {
+      "name": "CBABABA",
+      "value": "#BABABA"
+    },
+    {
+      "name": "CCBE7FF",
+      "value": "#CBE7FF"
+    },
+    {
+      "name": "CFFEBDE",
+      "value": "#FFEBDE"
+    },
+    {
+      "name": "CEC8131",
+      "value": "#EC8131"
+    },
+    {
+      "name": "CF2AF00",
+      "value": "#F2AF00"
+    },
+    {
+      "name": "CEA7224",
+      "value": "#EA7224"
+    },
+    {
+      "name": "C431651",
+      "value": "#431651"
+    },
+    {
+      "name": "C660071CE",
+      "value": "#660071CE"
+    },
+    {
+      "name": "C33431651",
+      "value": "#33431651"
+    },
+    {
+      "name": "C33EA7224",
+      "value": "#33EA7224"
+    },
+    {
+      "name": "C33F2AF00",
+      "value": "#33F2AF00"
+    },
+    {
+      "name": "C330071CE",
+      "value": "#330071CE"
+    },
+    {
+      "name": "CFF5EB446",
+      "value": "#FF5EB446"
+    },
+    {
+      "name": "C335EB446",
+      "value": "#335EB446"
+    },
+    {
+      "name": "CFFD0021B",
+      "value": "#FFD0021B"
+    },
+    {
+      "name": "C33D0021B",
+      "value": "#33D0021B"
+    },
+    {
+      "name": "CFFDE1C24",
+      "value": "#1ADE1C24"
+    },
+    {
+      "name": "CFFEC8131",
+      "value": "#1AEC8131"
+    },
+    {
+      "name": "C1A9A9A9A",
+      "value": "#1A9A9A9A"
+    },
+    {
+      "name": "color_D8D8D8",
+      "value": "#D8D8D8"
+    },
+    {
+      "name": "color_333333",
+      "value": "#333333"
+    },
+    {
+      "name": "color_37384E",
+      "value": "#37384E"
+    },
+    {
+      "name": "color_0270BA",
+      "value": "#0270BA"
+    },
+    {
+      "name": "color_4174CB",
+      "value": "#4174CB"
+    },
+    {
+      "name": "color_1717FF",
+      "value": "#1717FF"
+    },
+    {
+      "name": "color_989898",
+      "value": "#989898"
+    },
+    {
+      "name": "color_ABABAB",
+      "value": "#ABABAB"
+    },
+    {
+      "name": "color_0000FF",
+      "value": "#0000FF"
+    },
+    {
+      "name": "color_BCBCBC",
+      "value": "#BCBCBC"
+    },
+    {
+      "name": "color_FF3A49",
+      "value": "#FF3A49"
+    },
+    {
+      "name": "color_D1FBEA",
+      "value": "#D1FBEA"
+    },
+    {
+      "name": "color_E7EEFD",
+      "value": "#E7EEFD"
+    },
+    {
+      "name": "mine_shaft",
+      "value": "#444444"
+    },
+    {
+      "name": "gallery",
+      "value": "#EEEEEE"
+    },
+    {
+      "name": "buttonBg",
+      "value": "#016838"
+    },
+    {
+      "name": "app_color_f6",
+      "value": "#f6f6f6"
+    },
+    {
+      "name": "silver",
+      "value": "#C5C5C5"
+    },
+    {
+      "name": "tran_white",
+      "value": "#66FFFFFF"
+    },
+    {
+      "name": "dorado",
+      "value": "#5A5A5A"
+    },
+    {
+      "name": "altoB",
+      "value": "#DBDBDB"
+    },
+    {
+      "name": "zumthor",
+      "value": "#EBF5FF"
+    },
+    {
+      "name": "anakiwa1",
+      "value": "#9FCEFF"
+    },
+    {
+      "name": "ghost",
+      "value": "#C8C9CC"
+    },
+    {
+      "name": "apple",
+      "value": "#67C23A"
+    },
+    {
+      "name": "peppermint",
+      "value": "#F0F9EB"
+    },
+    {
+      "name": "mercury",
+      "value": "#E4E4E4"
+    },
+    {
+      "name": "malachite",
+      "value": "#20B759"
+    },
+    {
+      "name": "green_vogue",
+      "value": "#06244A"
+    },
+    {
+      "name": "outer_space",
+      "value": "#2B3336"
+    },
+    {
+      "name": "hit_gray",
+      "value": "#AAADAF"
+    },
+    {
+      "name": "rolling_stone",
+      "value": "#7F8486"
+    },
+    {
+      "name": "catskill_white",
+      "value": "#F0F5F9"
+    },
+    {
+      "name": "sunset_orange_alpha_10",
+      "value": "#1AFF4C4C"
+    },
+    {
+      "name": "sunset_orange",
+      "value": "#FF4C4C"
+    },
+    {
+      "name": "blue_ribbon_alpha_10",
+      "value": "#1A1062FE"
+    },
+    {
+      "name": "apple1",
+      "value": "#3FBE34"
+    },
+    {
+      "name": "apple_alpha_10",
+      "value": "#1A3FBE34"
+    },
+    {
+      "name": "athens_gray",
+      "value": "#EBEFF3"
+    },
+    {
+      "name": "wild_sand",
+      "value": "#F5F5F5"
+    },
+    {
+      "name": "oslo_gray",
+      "value": "#808487"
+    },
+    {
+      "name": "black_tran_10",
+      "value": "#66000000"
+    },
+    {
+      "name": "textSecond",
+      "value": "#737373"
+    },
+    {
+      "name": "text_black",
+      "value": "#282828"
+    },
+    {
+      "name": "text_gray",
+      "value": "#9A9A9A"
+    },
+    {
+      "name": "text_hint_gray",
+      "value": "#CECECE"
+    },
+    {
+      "name": "text_blue",
+      "value": "#0071CE"
+    },
+    {
+      "name": "text_blue_press",
+      "value": "#0065b9"
+    },
+    {
+      "name": "text_yellow",
+      "value": "#EA6400"
+    },
+    {
+      "name": "text_red",
+      "value": "#DE1C24"
+    },
+    {
+      "name": "line_gray",
+      "value": "#E0E0E0"
+    },
+    {
+      "name": "black",
+      "value": "#FF000000"
+    },
+    {
+      "name": "white",
+      "value": "#FFFFFFFF"
+    },
+    {
+      "name": "dialog_bg",
+      "value": "#80000000"
+    }
+  ]
+}
