@@ -1,6 +1,6 @@
 import { LitheRefresh, RefreshController } from "@abner/lithe_refresh";
 import { AxiosError, AxiosResponse } from "@ohos/axios";
-import { it } from "@ohos/hypium";
+import * as size from '../theme/size'
 import { ArticleEntity, ArticleEntityDatas, BannerBean, ResponseData } from "../models/models";
 import { axiosApi } from "../utils/AxiosUtils";
 import WanAndroidApi from "../wan_android_api";
@@ -38,7 +38,6 @@ struct RoundCard {
     .alignItems(HorizontalAlign.Center)
     .justifyContent(FlexAlign.Center)
     .width('100%')
-    // .height(120)
     .padding({ top: 10, bottom: 10 })
     .borderRadius(8)
   }
@@ -160,8 +159,6 @@ export default struct HomePageComponent {
       .vertical(false)
       .height(200)
       .width('100%')
-      .onChange((index) => {
-      })
 
       //卡片
       Row() {
@@ -176,6 +173,9 @@ export default struct HomePageComponent {
 
       //view Filer
       LitheRefresh({
+        isScrollSpring: true,
+        enableRefresh: true,
+        enableLoadMore: true,
         itemLayout: () => this.itemLayout(),
         scroller: this.scroller,
         controller: this.refreshController,
@@ -188,24 +188,17 @@ export default struct HomePageComponent {
           this.fetchArticleList(this.pageIndex)
         }
       })
-        .height('100%')
         .flexGrow(1)
         .width('100%')
-        .padding({ top: 10 })// .margin({bottom:100})
-        .backgroundColor($r('app.color.text_hint_gray'))
-
-
+        .margin({ top: 10, bottom: 10 })
+        .clip(false)
     }
-    // .alignItems(HorizontalAlign.Start)
     .justifyContent(FlexAlign.Start)
-    // .height(this.mHeight)
+    .alignItems(HorizontalAlign.Start)
     .height('100%')
     .width('100%')
-    // .flexBasis(1)
-    // .margin({ bottom: 100 })
-    .flexGrow(1)
-    // .flexShrink(1)
     .backgroundColor($r("app.color.CE7E7E7"))
+    .clip(false)
 
   }
 
@@ -229,12 +222,8 @@ export default struct HomePageComponent {
     }
     .width('100%')
     .height('100%')
-    // .margin({ /*top: 10,*/ bottom: 100 })
-    // .flexShrink(1)
-    .flexGrow(1)
+    .margin({ bottom: 10 })
     .padding({ left: 10, right: 10, bottom: 10 })
-
-    // .backgroundColor($r('app.color.text_blue'))
 
   }
 
@@ -277,7 +266,11 @@ export default struct HomePageComponent {
       .then((response: AxiosResponse<ResponseData<ArticleEntity>>) => {
         let artEntity = response.data
         if (artEntity) {
-          this.articleEntityList = artEntity.data.datas
+          if (this.pageIndex == 0) {
+            this.articleEntityList = artEntity.data.datas
+          } else {
+            this.articleEntityList = [...this.articleEntityList, ...artEntity.data.datas]
+          }
         }
         this.finishRefresh()
       })

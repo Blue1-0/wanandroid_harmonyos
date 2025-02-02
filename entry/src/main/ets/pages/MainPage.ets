@@ -3,6 +3,7 @@ import * as size from '../theme/size'
 import window from '@ohos.window';
 import { DisplayUtil } from '@pura/harmony-utils';
 import ProjectsPageComponent from '../components/ProjectsPageComponent';
+import ArticleTreeListComponent from '../components/ArticleTreeListComponent';
 
 @Entry
 @Component
@@ -11,8 +12,6 @@ struct MainPage {
   @State isInitPage: Array<boolean> = [true, false, false, false];
 
   build() {
-
-
     Column() {
 
       Tabs({
@@ -30,13 +29,13 @@ struct MainPage {
         .tabBar(this.tabBuilder(0, '首页', $r('app.media.icon_home_active'), $r('app.media.icon_home')))
 
         TabContent() {
-         ProjectsPageComponent()
+          ProjectsPageComponent()
         }
         .height(this.calcHeight())
         .tabBar(this.tabBuilder(1, '项目', $r('app.media.icon_home_active'), $r('app.media.icon_home')))
 
         TabContent() {
-          this.TestItem('知识体系')
+          ArticleTreeListComponent()
         }
         .height(this.calcHeight())
         .tabBar(this.tabBuilder(2, '知识体系', $r('app.media.icon_home_active'), $r('app.media.icon_home')))
@@ -79,7 +78,7 @@ struct MainPage {
         .padding({ bottom: size.vp_20 });
     }.width('100%')
     .height(size.vp_70)
-    .backgroundColor($r('app.color.white'))
+    .backgroundColor($r('app.color.CC9E6FF'))
     .justifyContent(FlexAlign.Center);
   }
 
