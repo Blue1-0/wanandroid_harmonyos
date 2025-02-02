@@ -78,7 +78,7 @@ struct MainPage {
         .padding({ bottom: size.vp_20 });
     }.width('100%')
     .height(size.vp_70)
-    .backgroundColor($r('app.color.CC9E6FF'))
+    // .backgroundColor($r('app.color.CC9E6FF'))
     .justifyContent(FlexAlign.Center);
   }
 

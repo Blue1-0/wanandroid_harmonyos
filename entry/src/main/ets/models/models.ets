@@ -95,3 +95,42 @@ export interface ProjectTreeEntity {
   userControlSetTop: boolean;
   visible: number;
 }
+
+export interface KHEntity {
+  articleList: object[];
+  author: string;
+  children: KHEntityChildren[];
+  courseId: number;
+  cover: string;
+  desc: string;
+  id: number;
+  lisense: string;
+  lisenseLink: string;
+  name: string;
+  order: number;
+  parentChapterId: number;
+  type: null;
+  userControlSetTop: boolean;
+  visible: number;
+
+  ///显示与隐藏
+  expanded:boolean
+}
+
+export interface KHEntityChildren {
+  // List<dynamic>? articleList;
+  author: string;
+
+  // List<dynamic>? children;
+  desc: string;
+  id: number;
+  lisense: string;
+  lisenseLink: string;
+  name: string;
+  order: number;
+  parentChapterId: number;
+  type: number;
+  userControlSetTop: boolean;
+  visible: number;
+
+}
