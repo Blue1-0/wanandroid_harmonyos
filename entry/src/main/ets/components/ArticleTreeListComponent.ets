@@ -17,15 +17,16 @@ struct TreeItem {
       Text(this.text)
         .fontColor($r('app.color.text_black'))
         .fontSize(12)
-        .margin({ top: 10 })
+        .margin({ top: 10, left: 15, right: 15 })
         .textAlign(TextAlign.Start)
         .maxLines(1)
+        .width('100%')
         .onClick(() => {
           this.expanded = !this.expanded
         })
       // 画一条水平线
       Divider()
-        .strokeWidth(1)// 线的宽度
+        .strokeWidth(0.5)// 线的宽度
         .color($r('app.color.CE7E7E7'))// 线的颜色
         .margin({ left: 10, right: 10, top: 10 })
 
@@ -38,15 +39,15 @@ struct TreeItem {
                   .fontColor($r('app.color.text_blue'))
                   .fontSize(12)
                   .textAlign(TextAlign.Start)
-                  .margin({ top: 10 })
-                  .padding({ left: 15, right: 15 })
+                  .margin({ left: 15, right: 15, top: 10 })
                   .maxLines(1)
+                  .width('100%')
                   .onClick(() => {
                     // this.childOnClick(item)
                   })
                 Divider()
                   .margin({ left: 10, right: 10, top: 10 })
-                  .strokeWidth(1)
+                  .strokeWidth('0.5')
                   .color($r('app.color.text_blue'))
               }.width('100%')
               .alignItems(HorizontalAlign.Start)
