@@ -1,32 +1,9 @@
 import { AxiosError, AxiosResponse } from "@ohos/axios";
 import { ProjectTreeEntity, ResponseData } from "../models/models";
 import { axiosApi } from "../utils/AxiosUtils";
-import WanAndroidApi from "../wan_android_api";
+import WanAndroidApi from "../core/WanAndroidApi";
+import ProjectRoundCard from "../widget/ProjectRoundCard";
 
-@Component
-struct RoundCard {
-  @Prop text: string
-
-  build() {
-    Column() {
-      Text(this.text.replace(/&amp;/g, "&"))
-        .fontSize(14)
-        .maxLines(1)
-        .fontColor($r("app.color.text_black"))
-    }
-    .width("100%")
-    .padding({
-      top: 15,
-      bottom: 15,
-      left: 10,
-      right: 10
-    })
-    .alignItems(HorizontalAlign.Start)
-    .justifyContent(FlexAlign.Center)
-    .backgroundColor($r('app.color.white'))
-    .borderRadius(8)
-  }
-}
 
 @Component
 export default struct ProjectsPageComponent {
@@ -37,7 +14,7 @@ export default struct ProjectsPageComponent {
       List({ space: 10 }) {
         ForEach(this.mProjectTreeEntity, (item: ProjectTreeEntity) => {
           ListItem() {
-            RoundCard({ text: item.name })
+            ProjectRoundCard({ text: item.name })
           }
         }, (item: ProjectTreeEntity) => "" + item.id)
       }
@@ -74,7 +51,6 @@ export default struct ProjectsPageComponent {
       })
 
   }
-
 }
 
 

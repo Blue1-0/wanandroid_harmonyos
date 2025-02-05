@@ -5,6 +5,13 @@ export interface ResponseData<T> {
   errorMsg: string;
 }
 
+//row item
+export interface RowItemBean {
+  id: string
+  name: string
+  image: Resource
+}
+
 //banner
 export interface BannerBean {
   //"desc":"我们支持订阅啦~",

@@ -1,117 +1,10 @@
-import { LitheRefresh, RefreshController } from "@abner/lithe_refresh";
-import { AxiosError, AxiosResponse } from "@ohos/axios";
-import * as size from '../theme/size'
-import { ArticleEntity, ArticleEntityDatas, BannerBean, ResponseData } from "../models/models";
-import { axiosApi } from "../utils/AxiosUtils";
-import WanAndroidApi from "../wan_android_api";
+import { LitheRefresh, RefreshController } from '@abner/lithe_refresh';
+import { ArticleEntityDatas, BannerBean, RowItemBean } from '../models/models';
+import RoundCard from '../widget/RoundCard';
+import ArticleCard from '../widget/ArticleCard';
+import dataManager from '../core/DataManager';
+import { ToastUtil } from '@pura/harmony-utils';
 
-
-//row item
-interface RowItemBean {
-  id: string
-  name: string
-  image: Resource
-}
-
-@Component
-struct RoundCard {
-  @Prop image: Resource
-  @Prop text: string
-
-  build() {
-
-    Column() {
-
-      Image(this.image)
-        .width(40)
-        .height(40)
-        .objectFit(ImageFit.Contain)
-      // .tintColor(Color.Blue)
-
-      Text(this.text)
-        .fontSize(16)
-        .fontColor(Color.Blue)
-        .margin({ top: 8 })
-
-
-    }
-    .alignItems(HorizontalAlign.Center)
-    .justifyContent(FlexAlign.Center)
-    .width('100%')
-    .padding({ top: 10, bottom: 10 })
-    .borderRadius(8)
-  }
-}
-
-//文章卡片
-@Component
-struct ArticleCard {
-  @Prop title: string
-  @Prop content: string
-  @Prop author: string
-  @Prop lg: boolean
-  @Prop time: string
-
-  build() {
-    Column() {
-      Row() {
-        Column() {
-          Text(this.title)
-            .maxLines(1)
-            .fontColor($r('app.color.text_black'))
-            .fontSize(12)
-
-          Text(this.content)
-            .maxLines(2)
-            .fontColor($r('app.color.text_gray'))
-            .fontSize(12)
-            .margin({ top: 5 })
-        }
-        .flexBasis('80%')
-        .flexGrow(0)
-        .flexShrink(1)
-        .alignItems(HorizontalAlign.Start)
-        .justifyContent(FlexAlign.Start)
-
-        Column() {
-          Image(this.lg ? $r('app.media.icon_home_active') : $r('app.media.icon_home'))
-            .height(24)
-            .width(24)
-            .objectFit(ImageFit.Contain)
-            .alignSelf(ItemAlign.End)
-        }
-        .flexBasis('20%')
-        .flexGrow(1)
-        .flexShrink(1)
-        .alignItems(HorizontalAlign.Center)
-        .justifyContent(FlexAlign.Center)
-
-        // .backgroundColor($r('app.color.text_gray'))
-      }
-      .width('100%')
-
-      Row() {
-        Text(this.author)
-          .maxLines(1)
-          .fontColor($r('app.color.text_black'))
-          .fontSize(12)
-        Text(this.time)
-          .maxLines(1)
-          .fontColor($r('app.color.text_black'))
-          .fontSize(12)
-      }
-      .width("100%")
-      .alignItems(VerticalAlign.Center)
-      .justifyContent(FlexAlign.SpaceBetween)
-      .margin({ top: 5 })
-
-    }
-    .width('100%')
-    .borderRadius(8)
-    .backgroundColor($r('app.color.white'))
-    .padding(10)
-  }
-}
 
 @Component
 export default struct HomePageComponent {
@@ -248,36 +141,28 @@ export default struct HomePageComponent {
   }
 
   fetchBannerList(): void {
-    axiosApi.get <ResponseData<BannerBean[]>>(WanAndroidApi.bannerList)
-      .then((response: AxiosResponse<ResponseData<BannerBean[]>>) => {
-        // 处理成功响应
-        console.log('请求成功：', JSON.stringify(response.data, null, 2));
-        this.bannerList = response.data.data
-
-      }).catch((error: AxiosError) => {
-      // 处理错误
-      console.log('请求失败：', error);
-    });
+    dataManager.fetchBannerList()
+      .onSuccess((data) => {
+        this.bannerList = data
+      })
+      .onFailed((errCode, errMsg, _) => {
+        ToastUtil.showToast(errCode + " " + errMsg)
+      })
   }
 
   fetchArticleList(num: number): void {
-    const url = WanAndroidApi.articleList.replace('{num}', num.toString())
-    axiosApi.get<ResponseData<ArticleEntity>>(url)
-      .then((response: AxiosResponse<ResponseData<ArticleEntity>>) => {
-        let artEntity = response.data
-        if (artEntity) {
-          if (this.pageIndex == 0) {
-            this.articleEntityList = artEntity.data.datas
-          } else {
-            this.articleEntityList = [...this.articleEntityList, ...artEntity.data.datas]
-          }
+    dataManager.fetchArticleList(num)
+      .onSuccess((data) => {
+        if (this.pageIndex == 0) {
+          this.articleEntityList = data.datas
+        } else {
+          this.articleEntityList = [...this.articleEntityList, ...data.datas]
         }
         this.finishRefresh()
       })
-      .catch((error: AxiosError) => {
+      .onFailed((errCode, errMsg, _) => {
+        ToastUtil.showToast(errCode + " " + errMsg)
         this.finishRefresh()
-        // 处理错误
-        console.log('请求失败：', error);
       })
   }
 
