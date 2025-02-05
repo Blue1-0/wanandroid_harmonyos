@@ -5,16 +5,16 @@ import { KHEntity, ResponseData } from "./models";
 
 
 export default class NetworkUtils {
- static  fetchTreeList(callback: (entity: KHEntity[]) => void): void {
+ static  fetchTreeList(callback: (entity: KHEntity[]|null,error:AxiosError|null) => void): void {
     axiosApi.get(WanAndroidApi.treeList)
       .then((response: AxiosResponse<ResponseData<KHEntity[]>>) => {
 
         if (response) {
-          callback(response.data.data)
+          callback(response.data.data,null)
         }
       })
       .catch((error: AxiosError) => {
-
+        callback(null,error);
       })
   }
 }
