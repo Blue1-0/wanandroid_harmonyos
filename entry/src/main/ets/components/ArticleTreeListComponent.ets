@@ -24,6 +24,7 @@ struct TreeItem {
         .onClick(() => {
           this.expanded = !this.expanded
         })
+
       // 画一条水平线
       Divider()
         .strokeWidth(0.5)// 线的宽度
