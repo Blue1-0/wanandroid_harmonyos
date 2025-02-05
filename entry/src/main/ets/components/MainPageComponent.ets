@@ -1,13 +1,14 @@
 import HomePageComponent from '../components/HomePageComponent';
 import * as size from '../theme/size'
-import window from '@ohos.window';
 import { DisplayUtil } from '@pura/harmony-utils';
 import ProjectsPageComponent from '../components/ProjectsPageComponent';
 import ArticleTreeListComponent from '../components/ArticleTreeListComponent';
+import { HMRouter } from '@hadss/hmrouter';
+import RoutePath from '../RoutePath';
 
-@Entry
+@HMRouter({ pageUrl: RoutePath.MainPage })
 @Component
-struct MainPage {
+export default struct MainPageComponent {
   @State activeIndex: number = 0;
   @State isInitPage: Array<boolean> = [true, false, false, false];
 

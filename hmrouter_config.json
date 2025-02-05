@@ -1,0 +1,25 @@
+{
+  "scanDir": [
+    "src/main/ets/components",
+    "src/main/ets/pages",
+    "src/main/ets/widget",
+    "src/main/ets/interceptors"
+  ],
+  "saveGeneratedFile": false,
+  "autoObfuscation": false,
+  "defaultPageTemplate": "./templates/defaultTemplate.ejs",
+  "customPageTemplate": [
+    {
+      "srcPath": [
+        "**/component/Home/**/*.ets"
+      ],
+      "templatePath": "templates/home_shopping_template.ejs"
+    },
+    {
+      "srcPath": [
+        "**/live/**/*.ets"
+      ],
+      "templatePath": "templates/live_template.ejs"
+    }
+  ]
+}

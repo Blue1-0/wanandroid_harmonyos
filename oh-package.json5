@@ -6,7 +6,9 @@
     "ohos_smart_dialog": "^1.7.5",
     "@nzy/logger": "^1.0.7",
     "@abner/lithe_refresh": "^1.0.0",
-    "@pura/harmony-utils": "^1.2.7"
+    "@pura/harmony-utils": "^1.2.7",
+    "@yue/webview_javascript_bridge": "^1.0.1",
+    "@hadss/hmrouter": "^1.0.0-rc.11"
   },
   "devDependencies": {
     "@ohos/hypium": "1.0.19",

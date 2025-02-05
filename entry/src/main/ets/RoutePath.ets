@@ -11,4 +11,8 @@ export default class RoutePath {
    * main
    */
   static MainPage = "pages/MainPage";
+  /**
+   * web view
+   */
+  static WebViewPage = "pages/WebViewPage";
 }

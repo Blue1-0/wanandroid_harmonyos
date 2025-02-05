@@ -6,7 +6,7 @@ export default interface AbsNetManager {
 
   fetchBannerList(): ChainableRequest<BannerBean[]>
 
-  fetchArticleList(num: number):ChainableRequest<ArticleEntity>
+  fetchArticleList(num: number): ChainableRequest<ArticleEntity>
 
   fetchTreeList(): ChainableRequest<KHEntity[]>
 }

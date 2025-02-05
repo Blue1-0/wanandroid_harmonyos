@@ -6,6 +6,8 @@ export default struct ArticleCard {
   @Prop author: string
   @Prop lg: boolean
   @Prop time: string
+  onProcess: () => void = () => {
+  };
 
   build() {
     Column() {
@@ -65,5 +67,8 @@ export default struct ArticleCard {
     .borderRadius(8)
     .backgroundColor($r('app.color.white'))
     .padding(10)
+    .onClick(() => {
+      this.onProcess();
+    })
   }
 }
