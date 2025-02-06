@@ -2,6 +2,7 @@ import { AxiosResponse, AxiosError, Method } from '@ohos/axios'
 import { ResponseData } from '../models/models';
 import { HashMap } from '@kit.ArkTS';
 import { axiosApi } from './AxiosUtils';
+import LoadingUtils from './LoadingUtils';
 
 export default class ChainableRequest<T> {
   private onSuccessCallbacks: ((data: T) => void)[]
@@ -62,5 +63,12 @@ export default class ChainableRequest<T> {
   onFailed(callback: (errorCode: number | string, errorMsg: string, data: T | null) => void): ChainableRequest<T> {
     this.onFailedCallbacks.push(callback)
     return this
+  }
+
+  private showLoading(){
+    LoadingUtils.showLoading()
+  }
+  private hideLoading(){
+    LoadingUtils.hideLoading()
   }
 }

@@ -3,6 +3,7 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 import { window } from '@kit.ArkUI';
 import RoutePath from '../RoutePath';
 import { HMRouterMgr } from '@hadss/hmrouter'
+import { InitUtils } from '@peakmain/library/src/main/ets/common/utils/InitUtils';
 
 export default class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
@@ -11,6 +12,7 @@ export default class EntryAbility extends UIAbility {
     HMRouterMgr.init({
       context: this.context
     })
+    InitUtils.getInstance(this.context)
   }
 
   onDestroy(): void {

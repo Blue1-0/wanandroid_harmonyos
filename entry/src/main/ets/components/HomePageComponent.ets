@@ -4,8 +4,8 @@ import RoundCard from '../widget/RoundCard';
 import ArticleCard from '../widget/ArticleCard';
 import dataManager from '../core/DataManager';
 import { ToastUtil } from '@pura/harmony-utils';
-import { router } from '@kit.ArkUI';
 import RoutePath from '../RoutePath';
+import { HMRouterMgr } from '@hadss/hmrouter/src/main/ets/api/HMRouterMgr';
 
 
 @Component
@@ -113,11 +113,10 @@ export default struct HomePageComponent {
             time: item.niceDate,
             onProcess: () => {
               //跳转
-              router.replaceUrl({
-                url: RoutePath.WebViewPage, params: {
-                  webUrl: "" + item.link
-                }
-              });
+              HMRouterMgr.push({
+                pageUrl: RoutePath.WebViewPage,
+                param: item
+              })
             }
           })
         }

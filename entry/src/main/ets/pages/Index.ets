@@ -31,7 +31,8 @@ struct Index {
       } else {
         this.stopCountdown();
         //跳转
-        router.replaceUrl({ url: RoutePath.MainPage });
+        // router.replaceUrl({ url: RoutePath.MainPage });
+        HMRouterMgr.replace({ pageUrl: RoutePath.MainPage })
       }
     }, 1000)
   }
@@ -51,21 +52,29 @@ struct Index {
     Column() {
       HMNavigation({
         navigationId: 'mainNavigation',
-        homePageUrl: RoutePath.MainPage,
+        homePageUrl: RoutePath.IndexPage,
         options: {
           standardAnimator: HMDefaultGlobalAnimator.STANDARD_ANIMATOR,
           dialogAnimator: HMDefaultGlobalAnimator.DIALOG_ANIMATOR,
           modifier: this.modifier
         }
       }) {
-        Text("Let's go,HarmonyOS Next..." + this.count)
-          .fontSize('25vp')
-          .fontWeight(FontWeight.Bold)
-          .alignRules({
-            center: { anchor: '__container__', align: VerticalAlign.Center },
-            middle: { anchor: '__container__', align: HorizontalAlign.Center }
-          })
+        Column() {
+          Text("Let's go,HarmonyOS Next..." + this.count)
+            .fontSize('25vp')
+            .fontWeight(FontWeight.Bold)
+            .alignRules({
+              center: { anchor: '__container__', align: VerticalAlign.Center },
+              middle: { anchor: '__container__', align: HorizontalAlign.Center }
+            })
+        }
+        .alignItems(HorizontalAlign.Center)
+        .justifyContent(FlexAlign.Center)
+        .height('100%')
+        .width('100%')
       }
+
+      // OhosSmartDialog()
     }
     .height('100%')
     .width('100%')
