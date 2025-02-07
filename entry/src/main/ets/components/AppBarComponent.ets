@@ -28,6 +28,7 @@ export default struct AppBarComponent {
         .fontColor($r("app.color.white"))
         .fontWeight(FontWeight.Bold)
         .textAlign(TextAlign.Center)
+        .maxLines(1)
         .width("auto")
         .flexGrow(1)
         .margin({ left: this.leftButtonText ? 0 : 'auto', right: this.rightButtonText ? 0 : 'auto' });

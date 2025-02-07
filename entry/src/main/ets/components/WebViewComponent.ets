@@ -1,10 +1,10 @@
 import RoutePath from '../RoutePath'
-import { HMPageParam, HMRouter, HMRouterMgr } from '@hadss/hmrouter'
+import { HMRouter, HMRouterMgr } from '@hadss/hmrouter'
 import web_webview from '@ohos.web.webview'
-import { ArticleEntityDatas } from '../models/models'
-import AppBarComponent from './AppBarComponent'
 import { LogUtil } from '@pura/harmony-utils'
-import LoadingUtils from '../utils/LoadingUtils'
+import { NavBar } from '@peakmain/library/src/main/ets/components'
+import { WebPageModel } from '../models/models'
+import LoadingDialog from '@lyb/loading-dialog'
 
 
 @HMRouter({ pageUrl: RoutePath.WebViewPage })
@@ -16,27 +16,29 @@ export default struct WebViewPage {
 
   build() {
     Column() {
-      AppBarComponent({
+      NavBar({
         title: this.title || "网页加载中",
-        leftButtonText: "返回",
+        showLeftClose: false,
+        backgroundColorResource: $r('app.color.CE7E7E7'),
         leftClick: () => {
           HMRouterMgr.pop()
         }
       })
+
       // 组件创建时，加载www.example.com
       Web({ src: 'about:blank', controller: this.webController })
         .width('100%')
         .height('100%')
         .flexGrow(1)
         .onPageBegin(() => {
-          LoadingUtils.showLoading()
+          // LoadingDialog.showLoading("网页加载中...")
           // 在 Web 组件初始化完成后加载 URL
           if (this.webUrl) {
             this.webController.loadUrl(this.webUrl)
           }
         })
         .onPageEnd(() => {
-          LoadingUtils.hideLoading()
+          // LoadingDialog.hide()
         })
     }
     .justifyContent(FlexAlign.Start)
@@ -45,16 +47,15 @@ export default struct WebViewPage {
   }
 
   aboutToAppear(): void {
-    LogUtil.warn('===onPageShow===', 'WebViewPage')
-    const param = HMRouterMgr.getCurrentParam() as ArticleEntityDatas
-    LogUtil.warn('param: ' + JSON.stringify(param), 'WebViewPage')
+    LogUtil.warn('===onPageShow===')
+    const param = HMRouterMgr.getCurrentParam() as WebPageModel
     if (param) {
-      this.webUrl = param.link
-      this.title = param.chapterName
+      this.webUrl = param.url
+      this.title = param.title
     }
   }
 
   aboutToDisappear(): void {
-    LogUtil.warn('===onPageHide===', 'WebViewPage')
+    LogUtil.warn('===onPageHide===')
   }
 }

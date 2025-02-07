@@ -1,5 +1,5 @@
 import { LitheRefresh, RefreshController } from '@abner/lithe_refresh';
-import { ArticleEntityDatas, BannerBean, RowItemBean } from '../models/models';
+import { ArticleEntityDatas, BannerBean, RowItemBean, WebPageModel } from '../models/models';
 import RoundCard from '../widget/RoundCard';
 import ArticleCard from '../widget/ArticleCard';
 import dataManager from '../core/DataManager';
@@ -34,18 +34,21 @@ export default struct HomePageComponent {
               .objectFit(ImageFit.Cover)
               .height(200)
               .width('100%')
+              .onClick(() => {
+                //跳转
+                HMRouterMgr.push({
+                  pageUrl: RoutePath.WebViewPage,
+                  param: new WebPageModel(banner.url, banner.title)
+                })
+              })
           }, (banner: BannerBean) => banner.id)
-
         } else {
-
           LoadingProgress()
             .width(60)
             .height(60)
           // Text('loading...')
           //   .fontSize(20)
         }
-
-
       }
       .loop(true)
       .autoPlay(true)
@@ -54,6 +57,7 @@ export default struct HomePageComponent {
       .vertical(false)
       .height(200)
       .width('100%')
+
 
       //卡片
       Row() {
@@ -115,7 +119,7 @@ export default struct HomePageComponent {
               //跳转
               HMRouterMgr.push({
                 pageUrl: RoutePath.WebViewPage,
-                param: item
+                param: new WebPageModel(item.link, item.title)
               })
             }
           })

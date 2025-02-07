@@ -1,5 +1,5 @@
-import { Logger } from '@nzy/logger';
 import axios, { AxiosError, AxiosInstance, AxiosResponse, InternalAxiosRequestConfig } from '@ohos/axios';
+import { LogUtil } from '@pura/harmony-utils';
 import AppConfigCenter from '../AppConfigCenter';
 import ChainableRequest from './ChainableRequest';
 
@@ -46,30 +46,30 @@ axiosApi.interceptors.request.use((config: InternalAxiosRequestConfig) => {
   //   config.headers['Access_token']=''
   // }
 
-  Logger.info("====request start====", NET_TAG)
-  Logger.info("method: " + config.method + " url : " + config.url, NET_TAG)
+  LogUtil.info("====request start====")
+  LogUtil.info("method: " + config.method + " url : " + config.url)
   if (config.data) {
-    Logger.info("" + config.data, NET_TAG)
+    LogUtil.info("" + config.data)
   }
-  Logger.info("====request end====", NET_TAG)
+  LogUtil.info("====request end====")
   return config
 }, (error: AxiosError) => {
-  Logger.info("====request error==== code: " + error.code + "msg: " + error.message, NET_TAG)
-  Logger.info("====request end====", NET_TAG)
+  LogUtil.info("====request error==== code: " + error.code + "msg: " + error.message)
+  LogUtil.info("====request end====")
   return Promise.reject(error)
 });
 
 axiosApi.interceptors.response.use((response: AxiosResponse) => {
-  Logger.info("====response start==== status: " + response.status, NET_TAG)
-  Logger.json(JSON.stringify(response.data), NET_TAG)
-  Logger.info("====response end====", NET_TAG)
+  LogUtil.info("====response start==== status: " + response.status)
+  LogUtil.print(JSON.stringify(response.data))
+  LogUtil.info("====response end====")
   return response
 }, (error: AxiosError) => {
-  Logger.info("====response error==== code " + error.code + " msg: " + error.message, NET_TAG);
+  LogUtil.info("====response error==== code " + error.code + " msg: " + error.message);
   if (error.response) {
-    Logger.json(JSON.stringify(error.response.data), NET_TAG)
+    LogUtil.print(JSON.stringify(error.response.data))
   }
-  Logger.info("====response end====", NET_TAG)
+  LogUtil.info("====response end====")
   return Promise.reject(error)
 })
 

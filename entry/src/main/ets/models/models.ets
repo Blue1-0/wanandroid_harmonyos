@@ -141,3 +141,12 @@ export interface KHEntityChildren {
   visible: number;
 
 }
+
+export class  WebPageModel{
+  url:string
+  title:string
+  constructor(url: string, title: string) {
+    this.url = url;
+    this.title = title;
+  }
+}

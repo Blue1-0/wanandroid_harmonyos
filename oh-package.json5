@@ -8,7 +8,8 @@
     "@pura/harmony-utils": "^1.2.7",
     "@yue/webview_javascript_bridge": "^1.0.1",
     "@hadss/hmrouter": "^1.0.0-rc.11",
-    "@peakmain/library": "^2.0.10"
+    "@peakmain/library": "^2.0.10",
+    "@lyb/loading-dialog": "^2.1.5"
   },
   "devDependencies": {
     "@ohos/hypium": "1.0.19",
