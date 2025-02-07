@@ -39,7 +39,7 @@ export default struct MainPageComponent {
           ArticleTreeListComponent()
         }
         .height(this.calcHeight())
-        .tabBar(this.tabBuilder(2, '知识体系', $r('app.media.icon_me_checked'), $r('app.media.icon_home')))
+        .tabBar(this.tabBuilder(2, '知识体系', $r('app.media.icon_zhishi_checked'), $r('app.media.icon_zhishi_default')))
 
         TabContent() {
           this.TestItem('我的')
@@ -70,8 +70,9 @@ export default struct MainPageComponent {
   tabBuilder(index: number, title: string, selectedImage: Resource, normalImage: Resource) {
     Column() {
       Image(this.activeIndex == index ? selectedImage : normalImage)
-        .width(size.vp_30)
-        .height(size.vp_30)
+        .width(32)
+        .height(32)
+        .objectFit(ImageFit.Contain)
         .margin({ top: size.vp_10, bottom: size.vp_10 });
       Text(title)
         .fontColor(this.activeIndex == index ? $r('app.color.text_blue') : $r('app.color.text_black'))

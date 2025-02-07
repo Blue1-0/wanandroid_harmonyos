@@ -18,10 +18,10 @@ export default struct HomePageComponent {
   @State articleEntityList: ArticleEntityDatas[] = [];
   @State pageIndex: number = 0
   rowItemList: RowItemBean[] = [
-    { id: "1", name: "公众号", image: $r('app.media.icon_home') },
-    { id: "2", name: "收藏", image: $r('app.media.icon_home') },
-    { id: "3", name: "导航", image: $r('app.media.icon_home') },
-    { id: "4", name: "作者介绍", image: $r('app.media.icon_home') }];
+    { id: "1", name: "公众号", image: $r('app.media.icon_oa') },
+    { id: "2", name: "收藏", image: $r('app.media.icon_collect') },
+    { id: "3", name: "导航", image: $r('app.media.icon_daohang') },
+    { id: "4", name: "作者介绍", image: $r('app.media.icon_author') }];
 
   build() {
 

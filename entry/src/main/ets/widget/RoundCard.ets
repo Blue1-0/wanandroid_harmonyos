@@ -13,7 +13,7 @@ export default struct RoundCard {
       // .tintColor(Color.Blue)
       Text(this.text)
         .fontSize(16)
-        .fontColor(Color.Blue)
+        .fontColor($r('app.color.text_blue'))
         .margin({ top: 8 })
     }
     .alignItems(HorizontalAlign.Center)
