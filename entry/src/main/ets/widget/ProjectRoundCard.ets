@@ -1,6 +1,8 @@
 @Component
-export  default struct ProjectRoundCard {
+export default struct ProjectRoundCard {
   @Prop text: string
+  onItemClick: () => void = () => {
+  }
 
   build() {
     Column() {
@@ -20,5 +22,8 @@ export  default struct ProjectRoundCard {
     .justifyContent(FlexAlign.Center)
     .backgroundColor($r('app.color.white'))
     .borderRadius(8)
+    .onClick(() => {
+      this.onItemClick()
+    })
   }
 }

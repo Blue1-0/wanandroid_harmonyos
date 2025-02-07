@@ -15,4 +15,9 @@ export default class RoutePath {
    * web view
    */
   static WebViewPage = "pages/WebViewPage";
+
+  /**
+   * web view
+   */
+  static ProjectListItemPage = "pages/ProjectListItemPage";
 }

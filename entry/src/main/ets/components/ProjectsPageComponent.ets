@@ -1,8 +1,10 @@
 import { AxiosError, AxiosResponse } from "@ohos/axios";
-import { ProjectTreeEntity, ResponseData } from "../models/models";
+import { ParamProjectsItemPageModel, ProjectTreeEntity, ResponseData } from "../models/models";
 import { axiosApi } from "../utils/AxiosUtils";
 import WanAndroidApi from "../core/WanAndroidApi";
 import ProjectRoundCard from "../widget/ProjectRoundCard";
+import { HMRouterMgr } from "@hadss/hmrouter";
+import RoutePath from "../RoutePath";
 
 
 @Component
@@ -14,7 +16,16 @@ export default struct ProjectsPageComponent {
       List({ space: 10 }) {
         ForEach(this.mProjectTreeEntity, (item: ProjectTreeEntity) => {
           ListItem() {
-            ProjectRoundCard({ text: item.name })
+            ProjectRoundCard({
+              text: item.name,
+              onItemClick: () => {
+                //跳转
+                HMRouterMgr.push({
+                  pageUrl: RoutePath.ProjectListItemPage,
+                  param: new ParamProjectsItemPageModel(item.id, item.name)
+                })
+              }
+            })
           }
         }, (item: ProjectTreeEntity) => "" + item.id)
       }

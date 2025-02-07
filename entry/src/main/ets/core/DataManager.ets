@@ -1,5 +1,5 @@
 import WanAndroidApi from "./WanAndroidApi";
-import { ArticleEntity, BannerBean, KHEntity } from "../models/models";
+import { ArticleEntity, BannerBean, KHEntity, ProjectListEntity } from "../models/models";
 import AbsNetManager from "./AbsNetManager";
 import ChainableRequest from "../utils/ChainableRequest";
 import AxiosUtils from "../utils/AxiosUtils";
@@ -23,6 +23,12 @@ class DataManager implements AbsNetManager, AbsCacheManager {
   //知识体系
   fetchTreeList(): ChainableRequest<KHEntity[]> {
     return AxiosUtils.get<KHEntity[]>(WanAndroidApi.treeList)
+  }
+
+  //根据项目分类拉取列表
+  fetchProjectTypeLst(cid: string, page: number): ChainableRequest<ProjectListEntity> {
+    const url = WanAndroidApi.projectList.replace('{page}', page.toString()) + "?cid=" + cid
+    return AxiosUtils.get<ProjectListEntity>(url)
   }
 }
 

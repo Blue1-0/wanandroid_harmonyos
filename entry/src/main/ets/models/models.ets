@@ -121,7 +121,7 @@ export interface KHEntity {
   visible: number;
 
   ///显示与隐藏
-  expanded:boolean
+  expanded: boolean
 }
 
 export interface KHEntityChildren {
@@ -142,11 +142,76 @@ export interface KHEntityChildren {
 
 }
 
-export class  WebPageModel{
-  url:string
-  title:string
+export class WebPageModel {
+  url: string
+  title: string
+
   constructor(url: string, title: string) {
     this.url = url;
     this.title = title;
   }
+}
+
+export class ParamProjectsItemPageModel {
+  cid: number
+  title: string
+
+  constructor(cid: number, title: string) {
+    this.cid = cid;
+    this.title = title;
+  }
+}
+
+export interface ProjectListEntity {
+  curPage: number;
+  datas: ProjectListEntityDatas[];
+  offset: number;
+  over: boolean;
+  pageCount: number;
+  size: number;
+  total: number;
+}
+
+export interface ProjectListEntityDatas {
+  adminAdd: boolean;
+  apkLink: string;
+  audit: number;
+  author: string;
+  canEdit: boolean;
+  chapterId: number;
+  chapterName: string;
+  collect: boolean;
+  courseId: number;
+  desc: string;
+  descMd: string;
+  envelopePic: string;
+  fresh: boolean;
+  host: string;
+  id: number;
+  isAdminAdd: boolean;
+  link: string;
+  niceDate: string;
+  niceShareDate: string;
+  origin: string;
+  prefix: string;
+  projectLink: string;
+  publishTime: number;
+  realSuperChapterId: number;
+  selfVisible: number;
+  shareDate: number;
+  shareUser: string;
+  superChapterId: number;
+  superChapterName: string;
+  tags: ProjectListEntityDatasTags[];
+  title: string;
+  type: number;
+  userId: number;
+  visible: number;
+  zan: number;
+}
+
+export interface ProjectListEntityDatasTags {
+  name: string;
+  url: string;
+
 }
