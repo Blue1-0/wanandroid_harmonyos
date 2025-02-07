@@ -27,25 +27,25 @@ export default struct MainPageComponent {
         // .padding({ bottom: 100 })
         // .margin({ bottom: 100 })
         .height(this.calcHeight())
-        .tabBar(this.tabBuilder(0, '首页', $r('app.media.icon_home_active'), $r('app.media.icon_home')))
+        .tabBar(this.tabBuilder(0, '首页', $r('app.media.icon_home_checked'), $r('app.media.icon_home_default')))
 
         TabContent() {
           ProjectsPageComponent()
         }
         .height(this.calcHeight())
-        .tabBar(this.tabBuilder(1, '项目', $r('app.media.icon_home_active'), $r('app.media.icon_home')))
+        .tabBar(this.tabBuilder(1, '项目', $r('app.media.icon_project_checked'), $r('app.media.icon_project')))
 
         TabContent() {
           ArticleTreeListComponent()
         }
         .height(this.calcHeight())
-        .tabBar(this.tabBuilder(2, '知识体系', $r('app.media.icon_home_active'), $r('app.media.icon_home')))
+        .tabBar(this.tabBuilder(2, '知识体系', $r('app.media.icon_me_checked'), $r('app.media.icon_home')))
 
         TabContent() {
           this.TestItem('我的')
         }
         .height(this.calcHeight())
-        .tabBar(this.tabBuilder(3, '我的', $r('app.media.icon_home_active'), $r('app.media.icon_home')))
+        .tabBar(this.tabBuilder(3, '我的', $r('app.media.icon_me_checked'), $r('app.media.icon_me')))
       }
       .barHeight(70)
       .barWidth('100%')

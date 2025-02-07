@@ -31,7 +31,7 @@ export default struct ArticleCard {
         .justifyContent(FlexAlign.Start)
 
         Column() {
-          Image(this.lg ? $r('app.media.icon_home_active') : $r('app.media.icon_home'))
+          Image(this.lg ? $r('app.media.lg_checked') : $r('app.media.lg_default'))
             .height(24)
             .width(24)
             .objectFit(ImageFit.Contain)
