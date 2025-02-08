@@ -13,8 +13,6 @@ export default struct ProjectListItemCard {
   build() {
 
     Column() {
-
-
       Row() {
         Image(this.img)
           .width(50)
@@ -35,46 +33,45 @@ export default struct ProjectListItemCard {
               .fontColor($r('app.color.text_black'))
               .maxLines(1)
               .margin({ left: 5 })
+              .flexShrink(1)
               .ellipsisMode(EllipsisMode.END)
-          }.width('100%')
+          }
+          .alignItems(VerticalAlign.Center)
+          .width('100%')
 
-          Row() {
+          Column() {
             Text(this.content)
               .fontSize(12)
               .fontColor($r('app.color.text_black'))
-              .maxLines(5)
+              .maxLines(4)
               .ellipsisMode(EllipsisMode.END)
+              .flexShrink(1)
           }
-          .flexGrow(1)
+          .margin({ right: 10, top: 5, bottom: 5 })
+          .padding({ bottom: 5 })
           .width('100%')
+          .backgroundColor($r('app.color.white'))
+          .layoutWeight(1)
+          // .clip(true)
 
           Row() {
             Text(this.time)
               .fontSize(12)
               .fontColor($r('app.color.text_blue'))
-              .maxLines(1)
-              .ellipsisMode(EllipsisMode.END)
             Text(this.author)
               .fontSize(12)
               .fontColor($r('app.color.text_black'))
-              .maxLines(1)
-              .ellipsisMode(EllipsisMode.END)
             Text("无")
               .fontSize(12)
-              .fontColor($r('app.color.text_gray'))
-              .maxLines(1)
-              .ellipsisMode(EllipsisMode.END)
+              .fontColor($r('app.color.text_yellow'))
           }
           .width('100%')
+          // .flexGrow(1)
           .justifyContent(FlexAlign.SpaceBetween)
         }
-        .width('100%')
-        .flexGrow(1)
-        // .justifyContent(FlexAlign.SpaceBetween)
+        .layoutWeight(1)
         .padding({ left: 10, right: 10 })
       }
-      .width('100%')
-
     }
     .padding({
       left: 10,
@@ -82,6 +79,7 @@ export default struct ProjectListItemCard {
       top: 8,
       bottom: 8
     })
+    .height(120)
     .width('100%')
     .backgroundColor($r("app.color.CE7E7E7"))
     .borderRadius(8)
