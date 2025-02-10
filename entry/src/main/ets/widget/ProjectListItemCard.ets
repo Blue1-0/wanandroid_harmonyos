@@ -36,23 +36,27 @@ export default struct ProjectListItemCard {
               .flexShrink(1)
               .ellipsisMode(EllipsisMode.END)
           }
+          .height(20)
           .alignItems(VerticalAlign.Center)
           .width('100%')
 
-          Column() {
-            Text(this.content)
-              .fontSize(12)
-              .fontColor($r('app.color.text_black'))
-              .maxLines(4)
-              .ellipsisMode(EllipsisMode.END)
-              .flexShrink(1)
-          }
-          .margin({ right: 10, top: 5, bottom: 5 })
-          .padding({ bottom: 5 })
-          .width('100%')
-          .backgroundColor($r('app.color.white'))
-          .layoutWeight(1)
+          // Column() {
+          Text(this.content)
+            .fontSize(12)
+            .maxLines(4)
+            .fontColor($r('app.color.text_black'))
+            .ellipsisMode(EllipsisMode.END)
+            .padding({ right: 10, top: 5, bottom: 5 })
+            .layoutWeight(1)
+
+          // }
+          // .margin({ right: 10, top: 5, bottom: 5 })
+          // .padding({ bottom: 5 })
+          // .width('100%')
+          // // .backgroundColor($r('app.color.white'))
+          // .layoutWeight(1)
           // .clip(true)
+
 
           Row() {
             Text(this.time)
@@ -66,7 +70,7 @@ export default struct ProjectListItemCard {
               .fontColor($r('app.color.text_yellow'))
           }
           .width('100%')
-          // .flexGrow(1)
+          .height(20)
           .justifyContent(FlexAlign.SpaceBetween)
         }
         .layoutWeight(1)
