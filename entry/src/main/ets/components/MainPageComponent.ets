@@ -6,6 +6,11 @@ import ArticleTreeListComponent from '../components/ArticleTreeListComponent';
 import { HMRouter } from '@hadss/hmrouter';
 import RoutePath from '../RoutePath';
 
+/**
+ * @author wzg
+ * desc:
+ */
+
 @HMRouter({ pageUrl: RoutePath.MainPage })
 @Component
 export default struct MainPageComponent {

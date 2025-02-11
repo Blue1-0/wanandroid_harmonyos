@@ -1,4 +1,7 @@
-//文章卡片
+/**
+ * @author wzg
+ * desc: 文章卡片
+ */
 @Component
 export default struct ArticleCard {
   @Prop title: string

@@ -1,4 +1,7 @@
-///玩android的APi
+/**
+ * @author wzg
+ * desc:玩android的APi
+ */
 export default class WanAndroidApi {
   ///登录
   static login = "user/login";

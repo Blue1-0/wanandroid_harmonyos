@@ -1,3 +1,8 @@
+
+/**
+ * @author wzg
+ * desc:
+ */
 @Component
 export default struct ArticleItemCard {
   @Prop img: ResourceStr

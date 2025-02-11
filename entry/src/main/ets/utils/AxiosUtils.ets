@@ -2,7 +2,10 @@ import axios, { AxiosError, AxiosInstance, AxiosResponse, InternalAxiosRequestCo
 import { LogUtil } from '@pura/harmony-utils';
 import AppConfigCenter from '../AppConfigCenter';
 import ChainableRequest from './ChainableRequest';
-
+/**
+ * @author wzg
+ * desc:
+ */
 
 export default class AxiosUtils {
   static get<T>(

@@ -1,7 +1,8 @@
 import { promptAction } from "@kit.ArkUI";
 
 /**
- * toast
+ * @author wzg
+ * desc: toast
  */
 export default class ToastUtils {
   static showToast(str: string): void {

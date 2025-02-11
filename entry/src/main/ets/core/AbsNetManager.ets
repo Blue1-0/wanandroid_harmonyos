@@ -1,6 +1,9 @@
 import { ArticleEntity, BannerBean, KHDetailListEntity, KHEntity, ProjectListEntity } from "../models/models"
 import ChainableRequest from "../utils/ChainableRequest"
-
+/**
+ * @author wzg
+ * desc:
+ */
 export default interface AbsNetManager {
 
 

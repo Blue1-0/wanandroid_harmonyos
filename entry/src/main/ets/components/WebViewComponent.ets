@@ -5,6 +5,10 @@ import { LogUtil } from '@pura/harmony-utils'
 import { WebPageModel } from '../models/models'
 import { NavBar } from '@peakmain/library'
 
+/**
+ * @author wzg
+ * desc:
+ */
 
 @HMRouter({ pageUrl: RoutePath.WebViewPage })
 @Component

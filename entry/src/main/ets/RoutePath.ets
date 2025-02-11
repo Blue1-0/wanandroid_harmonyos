@@ -1,3 +1,8 @@
+
+/**
+ * @author wzg
+ * desc:
+ */
 export default class RoutePath {
   /**
    * index

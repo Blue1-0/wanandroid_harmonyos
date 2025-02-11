@@ -7,16 +7,20 @@ import { ParamProjectsItemPageModel, ProjectListEntity, ProjectListEntityDatas, 
 import RoutePath from "../RoutePath"
 import ProjectListItemCard from "../widget/ProjectListItemCard"
 
+/**
+ * @author wzg
+ * desc:
+ */
+
 @HMRouter({ pageUrl: RoutePath.ProjectListItemPage })
 @Component
 export default struct ProjectListComponent {
   @State title: string = ''
-  @State cid: number = -1
-  pageIndex: number = 0
   @State entityList: ProjectListEntityDatas[] = []
-  private mSwiperController: SwiperController = new SwiperController();
   private refreshController: RefreshController = new RefreshController();
   private scroller: Scroller = new Scroller()
+  private pageIndex: number = 0
+  private cid: number = -1
 
   build() {
 
@@ -31,19 +35,18 @@ export default struct ProjectListComponent {
 
       })
       LitheRefresh({
-        isScrollSpring: true,
+        scroller: this.scroller,
+        controller: this.refreshController,
         enableRefresh: true,
         enableLoadMore: true,
         itemLayout: () => this.itemLayout(),
-        scroller: this.scroller,
-        controller: this.refreshController,
         onRefresh: () => {
           this.pageIndex = 0
-          this.queryProjectListItem(this.pageIndex)
+          this.queryProjectListItem()
         },
         onLoadMore: () => {
           this.pageIndex++;
-          this.queryProjectListItem(this.pageIndex)
+          this.queryProjectListItem()
         }
       })
         .flexGrow(1)
@@ -84,6 +87,12 @@ export default struct ProjectListComponent {
     }
     .width('100%')
     .height('100%')
+    .scrollBar(BarState.Off)
+    .edgeEffect(EdgeEffect.None)
+    .nestedScroll({
+      scrollForward: NestedScrollMode.PARENT_FIRST,
+      scrollBackward: NestedScrollMode.PARENT_FIRST
+    })
     .margin({ bottom: 10 })
     .padding({ left: 10, right: 10, bottom: 10 })
 
@@ -95,15 +104,15 @@ export default struct ProjectListComponent {
       this.cid = param.cid
       this.title = param.title
     }
-    this.queryProjectListItem(this.pageIndex)
+    this.queryProjectListItem()
 
   }
 
-  private queryProjectListItem(page: number) {
+  private queryProjectListItem() {
     if (this.cid == -1) {
       return
     }
-    DataManager.fetchProjectTypeLst("" + this.cid, page)
+    DataManager.fetchProjectTypeLst("" + this.cid, this.pageIndex)
       .onSuccess((data: ProjectListEntity) => {
         if (data) {
           this.entityList = data.datas

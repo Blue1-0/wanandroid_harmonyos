@@ -3,7 +3,10 @@ import router from '@ohos.router'
 import RoutePath from '../RoutePath'
 import { AttributeUpdater } from '@kit.ArkUI';
 
-
+/**
+ * @author wzg
+ * desc:
+ */
 /**
  * 界面样式公用函数
  */

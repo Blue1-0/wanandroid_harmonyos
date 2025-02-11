@@ -7,6 +7,10 @@ import { ToastUtil } from '@pura/harmony-utils';
 import RoutePath from '../RoutePath';
 import { HMRouterMgr } from '@hadss/hmrouter/src/main/ets/api/HMRouterMgr';
 
+/**
+ * @author wzg
+ * desc:
+ */
 
 @Component
 export default struct HomePageComponent {
@@ -70,21 +74,20 @@ export default struct HomePageComponent {
       .margin({ top: 10 })
       .padding({ left: 10, right: 10 })
 
-      //view Filer
+      //article list new
       LitheRefresh({
-        isScrollSpring: true,
+        scroller: this.scroller,
+        controller: this.refreshController,
         enableRefresh: true,
         enableLoadMore: true,
         itemLayout: () => this.itemLayout(),
-        scroller: this.scroller,
-        controller: this.refreshController,
         onRefresh: () => {
           this.pageIndex = 0
-          this.fetchArticleList(this.pageIndex)
+          this.fetchArticleList()
         },
         onLoadMore: () => {
           this.pageIndex++;
-          this.fetchArticleList(this.pageIndex)
+          this.fetchArticleList()
         }
       })
         .flexGrow(1)
@@ -104,7 +107,6 @@ export default struct HomePageComponent {
   @Builder
   itemLayout() {
     // 最新的文章列表
-    // Column({ space: 10 }) {
     List({ scroller: this.scroller, space: 10 }) {
       // 使用 ArticleCard 组件并传入属性值
       ForEach(this.articleEntityList, (item: ArticleEntityDatas) => {
@@ -128,6 +130,12 @@ export default struct HomePageComponent {
     }
     .width('100%')
     .height('100%')
+    .scrollBar(BarState.Off)
+    .edgeEffect(EdgeEffect.None)
+    .nestedScroll({
+      scrollForward: NestedScrollMode.PARENT_FIRST,
+      scrollBackward: NestedScrollMode.PARENT_FIRST
+    })
     .margin({ bottom: 10 })
     .padding({ left: 10, right: 10, bottom: 10 })
 
@@ -147,10 +155,8 @@ export default struct HomePageComponent {
   }
 
   aboutToAppear(): void {
-    console.log('homePage', "=====response.data11=====");
     this.fetchBannerList();
-    this.fetchArticleList(this.pageIndex);
-    console.log('homePage', "=====response.data22=====");
+    this.fetchArticleList();
   }
 
   fetchBannerList(): void {
@@ -163,8 +169,8 @@ export default struct HomePageComponent {
       })
   }
 
-  fetchArticleList(num: number): void {
-    dataManager.fetchArticleList(num)
+  fetchArticleList(): void {
+    dataManager.fetchArticleList(this.pageIndex)
       .onSuccess((data) => {
         if (this.pageIndex == 0) {
           this.articleEntityList = data.datas

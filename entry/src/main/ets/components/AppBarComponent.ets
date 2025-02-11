@@ -1,4 +1,7 @@
-// 定义AppBar组件
+/**
+ * @author wzg
+ * desc: 定义AppBar组件
+ */
 @Component
 export default struct AppBarComponent {
   // 标题文本

@@ -1,3 +1,7 @@
+/**
+ * @author wzg
+ * desc:
+ */
 @Component
 export default struct ProjectRoundCard {
   @Prop text: string

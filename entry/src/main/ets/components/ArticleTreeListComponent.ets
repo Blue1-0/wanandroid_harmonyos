@@ -5,7 +5,10 @@ import TreeItem from '../widget/TreeItem'
 import { HMRouterMgr } from '@hadss/hmrouter'
 import RoutePath from '../RoutePath'
 
-
+/**
+ * @author wzg
+ * desc:
+ */
 @Component
 export default struct ArticleTreeListComponent {
   @State entityList: KHEntity[] = []

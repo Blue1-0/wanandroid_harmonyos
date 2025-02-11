@@ -1,3 +1,8 @@
+
+/**
+ * @author wzg
+ * desc:
+ */
 @Component
 export default struct ProjectListItemCard {
   @Prop img: string

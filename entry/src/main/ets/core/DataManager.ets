@@ -6,6 +6,8 @@ import AxiosUtils from "../utils/AxiosUtils";
 import AbsCacheManager from "./AbsCacheManager";
 
 /**
+ * @author wzg
+ * desc:
  * 建议是统一管理所有的网络请求以及数据存取
  */
 class DataManager implements AbsNetManager, AbsCacheManager {
@@ -31,7 +33,7 @@ class DataManager implements AbsNetManager, AbsCacheManager {
     return AxiosUtils.get<ProjectListEntity>(url)
   }
 
-  //
+  //根据分类拉取最新的文章列表
   getArticleListPageDetail(cid: string, page: number): ChainableRequest<KHDetailListEntity> {
     const url = WanAndroidApi.articleListPageDetail.replace('{page}', page.toString()) + "?cid=" + cid
     return AxiosUtils.get<KHDetailListEntity>(url)

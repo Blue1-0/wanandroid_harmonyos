@@ -8,6 +8,10 @@ import RoutePath from "../RoutePath"
 import ArticleItemCard from "../widget/ArticleItemCard"
 
 
+/**
+ * @author wzg
+ * desc:
+ */
 @HMRouter({ pageUrl: RoutePath.ArticleTypeListComponent })
 @Component
 export default struct ArticleTypeListComponent {
@@ -33,6 +37,7 @@ export default struct ArticleTypeListComponent {
   @State entityList: KHDetailListEntityDatas[] = []
   private pageIndex: number = 0
   private controller: RefreshController = new RefreshController()
+  private scroller: Scroller = new Scroller()
 
   build() {
 
@@ -58,7 +63,8 @@ export default struct ArticleTypeListComponent {
           this.fetchArticleList();
         },
         itemLayout: () => this.buildItemLayout(),
-        controller: this.controller
+        controller: this.controller,
+        scroller: this.scroller
       })
         .margin({ top: 10 })
         .width('100%')
@@ -110,7 +116,7 @@ export default struct ArticleTypeListComponent {
   @Builder
   buildItemLayout() {
 
-    List({ space: 10 }) {
+    List({ space: 10, scroller: this.scroller }) {
       ForEach(this.entityList, (entity: KHDetailListEntityDatas) => {
         ListItem() {
           ArticleItemCard({
@@ -118,7 +124,7 @@ export default struct ArticleTypeListComponent {
             type: entity.superChapterName + "/" + entity.chapterName,
             content: entity.title,
             img: $r('app.media.icon_author_default'),
-            lgImg:entity.collect?$r('app.media.lg_checked'):$r('app.media.lg_default'),
+            lgImg: entity.collect ? $r('app.media.lg_checked') : $r('app.media.lg_default'),
             onItemClick: () => {
               //跳转
               HMRouterMgr.push({
@@ -134,7 +140,11 @@ export default struct ArticleTypeListComponent {
     }
     .padding({ left: 10, right: 10 })
     .scrollBar(BarState.Off)
-    .edgeEffect(EdgeEffect.Spring)
+    .edgeEffect(EdgeEffect.None)
+    .nestedScroll({
+      scrollForward: NestedScrollMode.PARENT_FIRST,
+      scrollBackward: NestedScrollMode.PARENT_FIRST
+    })
     .width('100%')
     .height('100%')
   }

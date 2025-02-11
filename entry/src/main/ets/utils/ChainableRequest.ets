@@ -2,10 +2,13 @@ import { AxiosResponse, AxiosError, Method } from '@ohos/axios'
 import { ResponseData } from '../models/models';
 import { HashMap } from '@kit.ArkTS';
 import { axiosApi } from './AxiosUtils';
-// import LoadingUtils from './LoadingUtils';
 import { LogUtil } from '@pura/harmony-utils';
 import LoadingDialog from '@lyb/loading-dialog';
 
+/**
+ * @author wzg
+ * desc: 基于axios封装链式回调
+ */
 export default class ChainableRequest<T> {
   private onSuccessCallbacks: ((data: T) => void)[]
   private onFailedCallbacks: ((errorCode: number | string, errorMsg: string, data: T | null) => void)[]

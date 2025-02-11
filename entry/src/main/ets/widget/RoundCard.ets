@@ -1,3 +1,8 @@
+
+/**
+ * @author wzg
+ * desc:
+ */
 @Component
 export default struct RoundCard {
   @Prop image: Resource

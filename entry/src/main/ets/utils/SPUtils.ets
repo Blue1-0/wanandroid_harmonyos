@@ -3,7 +3,10 @@ import dataPreferences from '@ohos.data.preferences'
 let context = getContext(this)
 let preference: dataPreferences.Preferences
 const defaultPreferenceName: string = "ohos.db"
-
+/**
+ * @author wzg
+ * desc:
+ */
 
 class SPUtils {
   async getPreferenceFromsStorage(dbName: string = defaultPreferenceName) {

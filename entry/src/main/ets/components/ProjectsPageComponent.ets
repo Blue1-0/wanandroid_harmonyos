@@ -5,7 +5,10 @@ import WanAndroidApi from "../core/WanAndroidApi";
 import ProjectRoundCard from "../widget/ProjectRoundCard";
 import { HMRouterMgr } from "@hadss/hmrouter";
 import RoutePath from "../RoutePath";
-
+/**
+ * @author wzg
+ * desc:
+ */
 
 @Component
 export default struct ProjectsPageComponent {
