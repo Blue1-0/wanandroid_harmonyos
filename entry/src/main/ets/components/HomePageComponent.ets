@@ -6,6 +6,7 @@ import dataManager from '../core/DataManager';
 import { ToastUtil } from '@pura/harmony-utils';
 import RoutePath from '../RoutePath';
 import { HMRouterMgr } from '@hadss/hmrouter/src/main/ets/api/HMRouterMgr';
+import { it, when } from '@ohos/hypium';
 
 /**
  * @author wzg
@@ -62,15 +63,23 @@ export default struct HomePageComponent {
       .height(200)
       .width('100%')
 
-
       //卡片
       Row() {
         ForEach(this.rowItemList, (item: RowItemBean) => {
           this.BuildCard(item.name, item.image, () => {
-            HMRouterMgr.push({
-              pageUrl: RoutePath.WechatArticleComponent,
-              param: item
-            })
+            if (item.id == '1') {
+              HMRouterMgr.push({
+                pageUrl: RoutePath.WechatArticleComponent,
+                param: item
+              })
+            } else if (item.id == '2' || '3' == item.id) {
+
+            } else if (item.id == '4') {
+              HMRouterMgr.push({
+                pageUrl: RoutePath.AuthorComponent,
+                param: item
+              })
+            }
           })
         }, (item: RowItemBean) => item.id)
       }

@@ -1,4 +1,3 @@
-
 /**
  * @author wzg
  * desc:
@@ -20,7 +19,6 @@ export default class RoutePath {
    * web view
    */
   static WebViewPage = "pages/WebViewPage";
-
   /**
    * web view
    */
@@ -30,4 +28,6 @@ export default class RoutePath {
    */
   static ArticleTypeListComponent = "pages/ArticleTypeListComponent";
   static WechatArticleComponent = "pages/WechatArticleComponent";
+  static AuthorComponent = "pages/AuthorComponent";
+  static StatementPageComponent = "pages/StatementPageComponent";
 }

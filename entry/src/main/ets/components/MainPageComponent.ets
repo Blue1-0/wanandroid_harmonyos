@@ -5,6 +5,7 @@ import ProjectsPageComponent from '../components/ProjectsPageComponent';
 import ArticleTreeListComponent from '../components/ArticleTreeListComponent';
 import { HMRouter } from '@hadss/hmrouter';
 import RoutePath from '../RoutePath';
+import MePageComponent from './MePageComponent';
 
 /**
  * @author wzg
@@ -47,7 +48,7 @@ export default struct MainPageComponent {
         .tabBar(this.tabBuilder(2, '知识体系', $r('app.media.icon_zhishi_checked'), $r('app.media.icon_zhishi_default')))
 
         TabContent() {
-          this.TestItem('我的')
+          MePageComponent()
         }
         .height(this.calcHeight())
         .tabBar(this.tabBuilder(3, '我的', $r('app.media.icon_me_checked'), $r('app.media.icon_me')))
