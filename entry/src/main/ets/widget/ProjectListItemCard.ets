@@ -9,6 +9,8 @@ export default struct ProjectListItemCard {
   @Prop apkUrl: string
   onImgClick: (img: string) => void = () => {
   }
+  onItemClick: () => void = () => {
+  }
 
   build() {
 
@@ -18,9 +20,7 @@ export default struct ProjectListItemCard {
           .width(50)
           .height(100)
           .objectFit(ImageFit.Fill)
-          .onClick(() => {
-            this.onImgClick(this.img);
-          })
+          .onClick(() => this.onImgClick(this.img))
         Column() {
           Row() {
             Image(this.userImg)
@@ -40,22 +40,13 @@ export default struct ProjectListItemCard {
           .alignItems(VerticalAlign.Center)
           .width('100%')
 
-          // Column() {
           Text(this.content)
             .fontSize(12)
             .maxLines(4)
             .fontColor($r('app.color.text_black'))
-            .ellipsisMode(EllipsisMode.END)
+            .textOverflow({ overflow: TextOverflow.Ellipsis })
             .padding({ right: 10, top: 5, bottom: 5 })
             .layoutWeight(1)
-
-          // }
-          // .margin({ right: 10, top: 5, bottom: 5 })
-          // .padding({ bottom: 5 })
-          // .width('100%')
-          // // .backgroundColor($r('app.color.white'))
-          // .layoutWeight(1)
-          // .clip(true)
 
 
           Row() {
@@ -87,5 +78,6 @@ export default struct ProjectListItemCard {
     .width('100%')
     .backgroundColor($r("app.color.CE7E7E7"))
     .borderRadius(8)
+    .onClick(() => this.onItemClick())
   }
 }

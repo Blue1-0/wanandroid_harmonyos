@@ -2,8 +2,8 @@ import RoutePath from '../RoutePath'
 import { HMRouter, HMRouterMgr } from '@hadss/hmrouter'
 import web_webview from '@ohos.web.webview'
 import { LogUtil } from '@pura/harmony-utils'
-import { NavBar } from '@peakmain/library/src/main/ets/components'
 import { WebPageModel } from '../models/models'
+import { NavBar } from '@peakmain/library'
 
 
 @HMRouter({ pageUrl: RoutePath.WebViewPage })

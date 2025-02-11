@@ -20,4 +20,8 @@ export default class RoutePath {
    * web view
    */
   static ProjectListItemPage = "pages/ProjectListItemPage";
+  /**
+   * article type list page
+   */
+  static ArticleTypeListComponent = "pages/ArticleTypeListComponent";
 }

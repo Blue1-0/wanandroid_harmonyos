@@ -5,6 +5,8 @@ export default struct TreeItem {
   @Prop text: string
   @Prop childList: KHEntityChildren[] = []
   @Prop expanded: boolean
+  onChildClick: () => void = () => {
+  }
 
   build() {
     Column() {
@@ -15,9 +17,7 @@ export default struct TreeItem {
         .textAlign(TextAlign.Start)
         .maxLines(1)
         .width('100%')
-        .onClick(() => {
-          this.expanded = !this.expanded
-        })
+        .onClick(() => this.expanded = !this.expanded)
 
       // 画一条水平线
       Divider()
@@ -38,9 +38,7 @@ export default struct TreeItem {
                   .padding({ left: 10 })
                   .maxLines(1)
                   .width('100%')
-                  .onClick(() => {
-                    // this.childOnClick(item)
-                  })
+                  .onClick(() => this.onChildClick())
                 Divider()
                   .margin({ left: 10, right: 10, top: 10 })
                   .strokeWidth('0.5')

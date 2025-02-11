@@ -3,7 +3,7 @@ import { HMRouter, HMRouterMgr } from "@hadss/hmrouter"
 import { NavBar } from "@peakmain/library"
 import { ToastUtil } from "@pura/harmony-utils"
 import DataManager from "../core/DataManager"
-import { ParamProjectsItemPageModel, ProjectListEntity, ProjectListEntityDatas } from "../models/models"
+import { ParamProjectsItemPageModel, ProjectListEntity, ProjectListEntityDatas, WebPageModel } from "../models/models"
 import RoutePath from "../RoutePath"
 import ProjectListItemCard from "../widget/ProjectListItemCard"
 
@@ -58,7 +58,6 @@ export default struct ProjectListComponent {
   @Builder
   itemLayout() {
     // 最新的文章列表
-    // Column({ space: 10 }) {
     List({ scroller: this.scroller, space: 10 }) {
       // 使用 ArticleCard 组件并传入属性值
       ForEach(this.entityList, (item: ProjectListEntityDatas) => {
@@ -70,7 +69,14 @@ export default struct ProjectListComponent {
             author: item.author,
             apkUrl: item.apkLink,
             content: item.desc,
-            time: item.niceDate
+            time: item.niceDate,
+            onItemClick: () => {
+              //跳转
+              HMRouterMgr.push({
+                pageUrl: RoutePath.WebViewPage,
+                param: new WebPageModel(item.link, item.title)
+              })
+            }
           })
 
         }

@@ -1,4 +1,4 @@
-import { ArticleEntity, BannerBean, KHEntity, ProjectListEntity } from "../models/models"
+import { ArticleEntity, BannerBean, KHDetailListEntity, KHEntity, ProjectListEntity } from "../models/models"
 import ChainableRequest from "../utils/ChainableRequest"
 
 export default interface AbsNetManager {
@@ -10,5 +10,7 @@ export default interface AbsNetManager {
 
   fetchTreeList(): ChainableRequest<KHEntity[]>
 
-  fetchProjectTypeLst(cid:string,page:number):ChainableRequest<ProjectListEntity>
+  fetchProjectTypeLst(cid: string, page: number): ChainableRequest<ProjectListEntity>
+
+  getArticleListPageDetail(cid: string, page: number): ChainableRequest<KHDetailListEntity>
 }

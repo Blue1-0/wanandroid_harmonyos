@@ -22,8 +22,6 @@ export default struct ProjectRoundCard {
     .justifyContent(FlexAlign.Center)
     .backgroundColor($r('app.color.white'))
     .borderRadius(8)
-    .onClick(() => {
-      this.onItemClick()
-    })
+    .onClick(() =>  this.onItemClick())
   }
 }

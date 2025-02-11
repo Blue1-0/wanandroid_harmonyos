@@ -1,5 +1,5 @@
 import WanAndroidApi from "./WanAndroidApi";
-import { ArticleEntity, BannerBean, KHEntity, ProjectListEntity } from "../models/models";
+import { ArticleEntity, BannerBean, KHDetailListEntity, KHEntity, ProjectListEntity } from "../models/models";
 import AbsNetManager from "./AbsNetManager";
 import ChainableRequest from "../utils/ChainableRequest";
 import AxiosUtils from "../utils/AxiosUtils";
@@ -29,6 +29,12 @@ class DataManager implements AbsNetManager, AbsCacheManager {
   fetchProjectTypeLst(cid: string, page: number): ChainableRequest<ProjectListEntity> {
     const url = WanAndroidApi.projectList.replace('{page}', page.toString()) + "?cid=" + cid
     return AxiosUtils.get<ProjectListEntity>(url)
+  }
+
+  //
+  getArticleListPageDetail(cid: string, page: number): ChainableRequest<KHDetailListEntity> {
+    const url = WanAndroidApi.articleListPageDetail.replace('{page}', page.toString()) + "?cid=" + cid
+    return AxiosUtils.get<KHDetailListEntity>(url)
   }
 }
 
