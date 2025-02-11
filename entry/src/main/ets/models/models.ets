@@ -264,3 +264,31 @@ export interface KHDetailListEntityDatas {
   visible: number;
   zan: number;
 }
+
+
+export interface WxArticleEntity {
+  author: string;
+  courseId: number;
+  cover: string;
+  desc: string;
+  id: number;
+  lisense: string;
+  lisenseLink: string;
+  name: string;
+  order: number;
+  parentChapterId: number;
+  type: number;
+  userControlSetTop: boolean;
+  visible: number;
+}
+
+export interface WxArticleDetailEntity {
+  curPage: number;
+  datas: ProjectListEntityDatas[]; //跟上面字体一致
+  offset: number;
+  over: boolean;
+  pageCount: number;
+  size: number;
+  total: number;
+}
+

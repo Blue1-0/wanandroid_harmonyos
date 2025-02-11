@@ -1,9 +1,18 @@
 import WanAndroidApi from "./WanAndroidApi";
-import { ArticleEntity, BannerBean, KHDetailListEntity, KHEntity, ProjectListEntity } from "../models/models";
+import {
+  ArticleEntity,
+  BannerBean,
+  KHDetailListEntity,
+  KHEntity,
+  ProjectListEntity,
+  WxArticleDetailEntity,
+  WxArticleEntity
+} from "../models/models";
 import AbsNetManager from "./AbsNetManager";
 import ChainableRequest from "../utils/ChainableRequest";
 import AxiosUtils from "../utils/AxiosUtils";
 import AbsCacheManager from "./AbsCacheManager";
+import { LogUtil } from "@pura/harmony-utils";
 
 /**
  * @author wzg
@@ -37,6 +46,19 @@ class DataManager implements AbsNetManager, AbsCacheManager {
   getArticleListPageDetail(cid: string, page: number): ChainableRequest<KHDetailListEntity> {
     const url = WanAndroidApi.articleListPageDetail.replace('{page}', page.toString()) + "?cid=" + cid
     return AxiosUtils.get<KHDetailListEntity>(url)
+  }
+
+  //
+  getWxChapters(): ChainableRequest<WxArticleEntity[]> {
+    return AxiosUtils.get<WxArticleEntity[]>(WanAndroidApi.wxChapters)
+  }
+
+  //
+  wxArticleListFormId(id: number, page: number, k: string): ChainableRequest<WxArticleDetailEntity> {
+    const url = WanAndroidApi.wxListFormId.replace('{page}', page.toString()).replace('{id}', id.toString())
+    const finalUrl = k ? url + "?k=" + k : url
+    LogUtil.error("====wxArticleListFormId===" + finalUrl)
+    return AxiosUtils.get<WxArticleDetailEntity>(finalUrl)
   }
 }
 

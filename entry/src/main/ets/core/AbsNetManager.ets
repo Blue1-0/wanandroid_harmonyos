@@ -1,5 +1,14 @@
-import { ArticleEntity, BannerBean, KHDetailListEntity, KHEntity, ProjectListEntity } from "../models/models"
+import {
+  ArticleEntity,
+  BannerBean,
+  KHDetailListEntity,
+  KHEntity,
+  ProjectListEntity,
+  WxArticleDetailEntity,
+  WxArticleEntity
+} from "../models/models"
 import ChainableRequest from "../utils/ChainableRequest"
+
 /**
  * @author wzg
  * desc:
@@ -16,4 +25,8 @@ export default interface AbsNetManager {
   fetchProjectTypeLst(cid: string, page: number): ChainableRequest<ProjectListEntity>
 
   getArticleListPageDetail(cid: string, page: number): ChainableRequest<KHDetailListEntity>
+
+  getWxChapters(): ChainableRequest<WxArticleEntity[]>
+
+  wxArticleListFormId(id: number, page: number,k:string): ChainableRequest<WxArticleDetailEntity>
 }

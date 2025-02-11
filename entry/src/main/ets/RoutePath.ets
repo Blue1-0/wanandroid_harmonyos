@@ -29,4 +29,5 @@ export default class RoutePath {
    * article type list page
    */
   static ArticleTypeListComponent = "pages/ArticleTypeListComponent";
+  static WechatArticleComponent = "pages/WechatArticleComponent";
 }

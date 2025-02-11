@@ -52,21 +52,21 @@ export default struct ArticleTypeListComponent {
       })
 
       LitheRefresh({
-        enableRefresh: true,
-        enableLoadMore: true,
-        onRefresh: () => {
-          this.pageIndex = 0;
-          this.fetchArticleList()
-        },
-        onLoadMore: () => {
-          this.pageIndex++
-          this.fetchArticleList();
-        },
-        itemLayout: () => this.buildItemLayout(),
-        controller: this.controller,
-        scroller: this.scroller
-      })
-        .margin({ top: 10 })
+          enableRefresh: true,
+          enableLoadMore: true,
+          onRefresh: () => {
+            this.pageIndex = 0;
+            this.fetchArticleList()
+          },
+          onLoadMore: () => {
+            this.pageIndex++
+            this.fetchArticleList();
+          },
+          itemLayout: () => this.buildItemLayout(),
+          controller: this.controller,
+          scroller: this.scroller
+        })
+          .margin({ top: 10 })
         .width('100%')
         .layoutWeight(1)
     }

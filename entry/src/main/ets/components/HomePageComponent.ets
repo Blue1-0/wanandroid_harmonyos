@@ -66,7 +66,12 @@ export default struct HomePageComponent {
       //卡片
       Row() {
         ForEach(this.rowItemList, (item: RowItemBean) => {
-          this.BuildCard(item.name, item.image)
+          this.BuildCard(item.name, item.image, () => {
+            HMRouterMgr.push({
+              pageUrl: RoutePath.WechatArticleComponent,
+              param: item
+            })
+          })
         }, (item: RowItemBean) => item.id)
       }
       .width('100%')
@@ -142,13 +147,14 @@ export default struct HomePageComponent {
   }
 
   @Builder
-  BuildCard(itemStr: string, img: Resource) {
+  BuildCard(itemStr: string, img: Resource, onItemClick: () => void) {
     Row() {
       RoundCard({
         image: img,
         text: itemStr
       })
     }
+    .onClick(() => onItemClick())
     .backgroundColor($r('app.color.white'))
     .width('23%')
     .borderRadius(8)
