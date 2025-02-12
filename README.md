@@ -3,10 +3,10 @@
 #### 介绍
 玩Android的harmonyos版本，目前持续开发中...
 #### 部分图片展示
-![微信图片_20250212163943.png](https://gitee.com/wzg_gitee/wan_android_harmonyos-master/blob/main/AppScope/resources/base/media/pic_1.png)
-![微信图片_20250212164643.png](https://gitee.com/wzg_gitee/wan_android_harmonyos-master/blob/main/AppScope/resources/base/media/pic_2.png)
-![微信图片_20250212164004.png](https://gitee.com/wzg_gitee/wan_android_harmonyos-master/blob/main/AppScope/resources/base/media/pic_3.png)
-![微信图片_20250212164024.png](https://gitee.com/wzg_gitee/wan_android_harmonyos-master/blob/main/AppScope/resources/base/media/pic_4.png)
+![首页.png](https://gitee.com/wzg_gitee/wan_android_harmonyos-master/blob/main/AppScope/resources/base/media/pic_1.png)
+![项目.png](https://gitee.com/wzg_gitee/wan_android_harmonyos-master/blob/main/AppScope/resources/base/media/pic_2.png)
+![知识体系.png](https://gitee.com/wzg_gitee/wan_android_harmonyos-master/blob/main/AppScope/resources/base/media/pic_3.png)
+![我的.png](https://gitee.com/wzg_gitee/wan_android_harmonyos-master/blob/main/AppScope/resources/base/media/pic_4.png)
 
 #### 软件架构
 1. harmonyos5.0
