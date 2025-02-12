@@ -3,11 +3,20 @@
 #### 介绍
 玩Android的harmonyos版本，目前持续开发中...
 #### 软件架构
-harmonyos5.0 
-
-deveco 5.0
-
-
+1. harmonyos5.0
+2. deveco 5.0
+3. network(axios)-组件
+4. harmongosutils-组件
+5. 更多查看源码，接口大多都有注释
+#### 已开发功能
+1. 首页（banner,card,最新文章列表）
+2. 项目
+3. 知识体系
+4. 我的
+#### 待开发功能
+1. 登录
+2. 收藏
+3. 导航
 
 #### 安装教程
 
@@ -20,7 +29,13 @@ deveco 5.0
 1.  xxxx
 2.  xxxx
 3.  xxxx
+#### 后续维护记录
 
+### version:1.0.0
+1. 首页（banner,card,最新文章列表）-新增
+2. 项目-新增
+3. 知识体系-新增
+4. 我的-新增
 #### 参与贡献
 
 1.  Fork 本仓库
