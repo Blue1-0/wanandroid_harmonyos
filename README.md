@@ -2,6 +2,12 @@
 
 #### 介绍
 玩Android的harmonyos版本，目前持续开发中...
+#### 部分图片展示
+![微信图片_20250212163943.png](..raw/微信图片_20250212163943.png)
+![微信图片_20250212164643.png](..%2F..%2FPictures%2FSaved%20Pictures%2F%CE%A2%D0%C5%CD%BC%C6%AC_20250212164643.png)
+![微信图片_20250212164004.png](..%2F..%2FPictures%2FSaved%20Pictures%2F%CE%A2%D0%C5%CD%BC%C6%AC_20250212164004.png)
+![微信图片_20250212164024.png](..%2F..%2FPictures%2FSaved%20Pictures%2F%CE%A2%D0%C5%CD%BC%C6%AC_20250212164024.png)
+
 #### 软件架构
 1. harmonyos5.0
 2. deveco 5.0
