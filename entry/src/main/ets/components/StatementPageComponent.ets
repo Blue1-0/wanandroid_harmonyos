@@ -16,7 +16,7 @@ export default struct StatementPageComponent {
 
     Column() {
       NavBar({
-        title: "作者介绍",
+        title: "声明与介绍",
         showLeftClose: false,
         backgroundColorResource: $r('app.color.CE7E7E7'),
         leftClick: () => {
@@ -25,21 +25,21 @@ export default struct StatementPageComponent {
       })
       //detail
       Column() {
-        Text("1.作者是7年开发经验的移动端开发，擅长java,kotlin,dart,arkTs,了解C++,C,js,html的使用,主要实战于原始android,原始hamonyOs,开平台flutter的开发.")
+        Text("1.此app是基于HarmonyOS 5.0.0开发的。")
           .fontColor($r('app.color.text_black'))
           .maxLines(4)
           .margin({ top: 10 })
           .width('100%')
           .textAlign(TextAlign.Start)
           .fontSize(20)
-        Text("2.关于本开源项目的问提随时交流，欢迎探讨.")
+        Text("2.代码都是开源的，非盈利性质的。")
           .fontColor($r('app.color.text_black'))
           .textAlign(TextAlign.Start)
           .margin({ top: 10 })
           .width('100%')
           .maxLines(4)
           .fontSize(20)
-        Text("3.联系方式：718603390@qq.com")
+        Text("3.此项目是学习过程开发的项目，诸多不足请海涵，欢迎提出改进意见。")
           .fontColor($r('app.color.text_blue'))
           .textAlign(TextAlign.Start)
           .width('100%')
@@ -48,26 +48,21 @@ export default struct StatementPageComponent {
           .fontSize(20)
 
 
-        Text("点我复制联系方式")
+        Text("4.项目开源不具备入侵性，任何非作者改动，造成任何影响概不负责。")
           .fontColor($r('app.color.text_blue'))
           .textAlign(TextAlign.Start)
           .width('100%')
           .margin({ top: 20 })
           .maxLines(4)
           .fontSize(20)
-          .onClick(() => {
-            let pasteData: pasteboard.PasteData =
-              pasteboard.createData(pasteboard.MIMETYPE_TEXT_PLAIN, "718603390@qq.com")
-            let systemPasteboard: pasteboard.SystemPasteboard = pasteboard.getSystemPasteboard()
-            systemPasteboard.setData(pasteData, (err, data) => {
-              if (err) {
-                LogUtil.error("===复制失败==")
-                ToastUtil.showToast("复制失败：err=" + err.message)
-                return
-              }
-              ToastUtil.showToast("复制成功，请前往粘贴")
-            })
-          })
+        Text("5.项目讨论和技术交流，欢迎联系我，首页作者页附带联系方式。")
+          .fontColor($r('app.color.text_blue'))
+          .textAlign(TextAlign.Start)
+          .width('100%')
+          .margin({ top: 20 })
+          .maxLines(4)
+          .fontSize(20)
+
       }.width('100%')
       .padding({ top: 10, left: 10, right: 10 })
       .alignItems(HorizontalAlign.Start)

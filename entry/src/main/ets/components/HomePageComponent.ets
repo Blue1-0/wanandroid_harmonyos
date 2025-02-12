@@ -73,7 +73,7 @@ export default struct HomePageComponent {
                 param: item
               })
             } else if (item.id == '2' || '3' == item.id) {
-
+              ToastUtil.showToast("该功能计划中！！！")
             } else if (item.id == '4') {
               HMRouterMgr.push({
                 pageUrl: RoutePath.AuthorComponent,
