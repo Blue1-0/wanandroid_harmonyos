@@ -2,6 +2,9 @@
 
 #### 介绍
 玩Android的harmonyos版本，目前持续开发中...
+#### 关于作者
+
+Email &nbsp;&nbsp;: 718603390@qq.com
 #### 部分图片展示
 <table>
   <tr>
