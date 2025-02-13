@@ -62,6 +62,13 @@ export default struct StatementPageComponent {
           .margin({ top: 20 })
           .maxLines(4)
           .fontSize(20)
+        Text("6.此app内api均来源于玩android官网，感谢官网开源。")
+          .fontColor($r('app.color.text_blue'))
+          .textAlign(TextAlign.Start)
+          .width('100%')
+          .margin({ top: 20 })
+          .maxLines(4)
+          .fontSize(20)
 
       }.width('100%')
       .padding({ top: 10, left: 10, right: 10 })
