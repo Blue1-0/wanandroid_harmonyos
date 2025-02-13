@@ -25,7 +25,7 @@ export default struct AuthorComponent {
       })
       //detail
       Column() {
-        Text("1.作者是7年开发经验的移动端开发，擅长java,kotlin,dart,arkTs,了解C++,C,js,html的使用,主要实战于原始android,原始hamonyOs,开平台flutter的开发.")
+        Text("1.作者是专注移动开发的developer，擅长java,kotlin,dart,arkTs,了解C++,C,js,html的使用,主要实战于原始android,原生harmonyOs,跨平台flutter的开发.")
           .fontColor($r('app.color.text_black'))
           .maxLines(4)
           .margin({ top: 10 })
