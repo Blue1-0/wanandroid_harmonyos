@@ -47,7 +47,8 @@ export default struct MePageComponent {
           }
           .width('100%')
           .height(90)
-          .margin({ left: 8 })
+          .padding({ top: 10, bottom: 10 })
+          .margin({ left: 12 })
           .alignItems(HorizontalAlign.Start)
           .justifyContent(FlexAlign.SpaceBetween)
         }
@@ -56,7 +57,7 @@ export default struct MePageComponent {
         Text("玩Android的HarmonyOS版本,欢迎探讨。")
           .fontSize(12)
           .maxLines(1)
-          .margin({ top: 5 })
+          .margin({ top: 12 })
           .width('100%')
           .textAlign(TextAlign.Start)
           .fontColor($r('app.color.text_blue'))
@@ -82,7 +83,7 @@ export default struct MePageComponent {
           .width(25)
           .height(24)
           .objectFit(ImageFit.Fill)
-          .onClick(()=>{
+          .onClick(() => {
             ToastUtil.showToast("该功能计划中！！！")
           })
 
@@ -154,7 +155,7 @@ export default struct MePageComponent {
         .backgroundColor($r('app.color.text_blue'))
         .margin({ bottom: 25 })
         .borderRadius(40)
-        .onClick(()=>{
+        .onClick(() => {
           ToastUtil.showToast("该功能计划中！！！")
         })
       }
