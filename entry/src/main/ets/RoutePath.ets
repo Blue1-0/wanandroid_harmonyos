@@ -31,4 +31,5 @@ export default class RoutePath {
   static AuthorComponent = "pages/AuthorComponent";
   static StatementPageComponent = "pages/StatementPageComponent";
   static CollectArticleTypeListComponent = "pages/CollectArticleTypeListComponent";
+  static NavigationPageComponent = "pages/NavigationPageComponent";
 }

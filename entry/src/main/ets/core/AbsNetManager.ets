@@ -3,6 +3,7 @@ import {
   BannerBean,
   KHDetailListEntity,
   KHEntity,
+  NavJsonEntity,
   ProjectListEntity,
   WxArticleDetailEntity,
   WxArticleEntity
@@ -28,5 +29,7 @@ export default interface AbsNetManager {
 
   getWxChapters(): ChainableRequest<WxArticleEntity[]>
 
-  wxArticleListFormId(id: number, page: number,k:string): ChainableRequest<WxArticleDetailEntity>
+  wxArticleListFormId(id: number, page: number, k: string): ChainableRequest<WxArticleDetailEntity>
+
+  getNaviJson(): ChainableRequest<NavJsonEntity[]>
 }

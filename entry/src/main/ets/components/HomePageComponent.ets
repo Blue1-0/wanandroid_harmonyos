@@ -72,8 +72,13 @@ export default struct HomePageComponent {
                 pageUrl: RoutePath.WechatArticleComponent,
                 param: item
               })
-            } else if (item.id == '2' || '3' == item.id) {
+            } else if (item.id == '2') {
               ToastUtil.showToast("该功能计划中！！！")
+            } else if ('3' == item.id) {
+              HMRouterMgr.push({
+                pageUrl: RoutePath.NavigationPageComponent,
+                param: item
+              })
             } else if (item.id == '4') {
               HMRouterMgr.push({
                 pageUrl: RoutePath.AuthorComponent,

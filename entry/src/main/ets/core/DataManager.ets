@@ -4,6 +4,7 @@ import {
   BannerBean,
   KHDetailListEntity,
   KHEntity,
+  NavJsonEntity,
   ProjectListEntity,
   WxArticleDetailEntity,
   WxArticleEntity
@@ -20,6 +21,7 @@ import { LogUtil } from "@pura/harmony-utils";
  * 建议是统一管理所有的网络请求以及数据存取
  */
 class DataManager implements AbsNetManager, AbsCacheManager {
+
   //banner list
   fetchBannerList(): ChainableRequest<BannerBean[]> {
     return AxiosUtils.get<BannerBean[]>(WanAndroidApi.bannerList)
@@ -60,6 +62,11 @@ class DataManager implements AbsNetManager, AbsCacheManager {
     LogUtil.error("====wxArticleListFormId===" + finalUrl)
     return AxiosUtils.get<WxArticleDetailEntity>(finalUrl)
   }
+
+  //
+   getNaviJson(): ChainableRequest<NavJsonEntity[]> {
+     return AxiosUtils.get<NavJsonEntity[]>(WanAndroidApi.naviJson)
+    }
 }
 
 const dataManager = new DataManager()

@@ -292,3 +292,50 @@ export interface WxArticleDetailEntity {
   total: number;
 }
 
+export interface NavJsonEntity {
+  articles: NavJsonEntityArticles[];
+  cid: number;
+  name: string;
+
+}
+
+export interface NavJsonEntityArticles {
+  adminAdd: boolean;
+  apkLink: string;
+  audit: number;
+  author: string;
+  canEdit: boolean;
+  chapterId: number;
+  chapterName: string;
+  collect: boolean;
+  courseId: number;
+  desc: string;
+  descMd: string;
+  envelopePic: string;
+  fresh: boolean;
+  host: string;
+  id: number;
+  isAdminAdd;
+  link: string;
+  niceDate: string;
+  niceShareDate: string;
+  origin: string;
+  prefix: string;
+  projectLink: string;
+  publishTime: number;
+  realSuperChapterId: number;
+  route: boolean;
+  selfVisible: number;
+  shareDate: number;
+  shareUser: string;
+  superChapterId: number;
+  superChapterName: string;
+
+  // List<dynamic>? tags;
+  title: string;
+  type: number;
+  userId: number;
+  visible: number;
+  zan: number;
+}
+
