@@ -26,41 +26,33 @@ export default struct MePageComponent {
             .objectFit(ImageFit.Fill)
 
           Column() {
-            Text(this.name)
-              .fontSize(12)
-              .maxLines(1)
-              .textAlign(TextAlign.Start)
-              .textOverflow({ overflow: TextOverflow.Ellipsis })
-              .fontColor($r('app.color.text_blue'))
-            Text(this.sex)
-              .fontSize(12)
-              .maxLines(1)
-              .textAlign(TextAlign.Start)
-              .textOverflow({ overflow: TextOverflow.Ellipsis })
-              .fontColor($r('app.color.text_blue'))
-            Text(this.other)
-              .fontSize(12)
-              .maxLines(1)
-              .textAlign(TextAlign.Start)
-              .textOverflow({ overflow: TextOverflow.Ellipsis })
-              .fontColor($r('app.color.text_blue'))
+            this.SingleText(this.name)
+            this.SingleText(this.sex)
+            this.SingleText(this.other)
+            this.SingleText("玩Android的HarmonyOS版本,欢迎探讨。")
+
           }
           .width('100%')
           .height(90)
-          .padding({ top: 10, bottom: 10 })
+          .padding({
+            top: 5,
+            bottom: 5,
+            right: 5,
+            left: 0
+          })
           .margin({ left: 12 })
           .alignItems(HorizontalAlign.Start)
           .justifyContent(FlexAlign.SpaceBetween)
         }
         .width('100%')
 
-        Text("玩Android的HarmonyOS版本,欢迎探讨。")
-          .fontSize(12)
-          .maxLines(1)
-          .margin({ top: 12 })
-          .width('100%')
-          .textAlign(TextAlign.Start)
-          .fontColor($r('app.color.text_blue'))
+        // Text("玩Android的HarmonyOS版本,欢迎探讨。")
+        //   .fontSize(12)
+        //   .maxLines(1)
+        //   .margin({ top: 12 })
+        //   .width('100%')
+        //   .textAlign(TextAlign.Start)
+        //   .fontColor($r('app.color.text_blue'))
       }
       .padding({
         left: 10,
@@ -88,13 +80,8 @@ export default struct MePageComponent {
           })
 
       }
-      .width('100%')
-      .height(40)
-      .padding({ left: 10, right: 10 })
+      .commonRowStyle()
       .justifyContent(FlexAlign.SpaceBetween)
-      .borderRadius(8)
-      .backgroundColor($r('app.color.white'))
-      .margin({ top: 10 })
 
       Row() {
         Text("介绍与声明")
@@ -113,13 +100,9 @@ export default struct MePageComponent {
           })
 
       }
-      .width('100%')
-      .height(40)
-      .padding({ left: 10, right: 10 })
+      .commonRowStyle()
       .justifyContent(FlexAlign.SpaceBetween)
-      .borderRadius(8)
-      .backgroundColor($r('app.color.white'))
-      .margin({ top: 10 })
+
 
       Row() {
         Text("版本")
@@ -132,13 +115,8 @@ export default struct MePageComponent {
           .textAlign(TextAlign.Center)
           .fontColor($r('app.color.text_blue'))
       }
-      .width('100%')
-      .height(40)
-      .padding({ left: 10, right: 10 })
+      .commonRowStyle()
       .justifyContent(FlexAlign.SpaceBetween)
-      .borderRadius(8)
-      .backgroundColor($r('app.color.white'))
-      .margin({ top: 10 })
 
 
       Column() {
@@ -149,7 +127,7 @@ export default struct MePageComponent {
             .fontColor($r('app.color.white'))
             .fontSize(14)
         }
-        .height(40)
+        .height(44)
         .justifyContent(FlexAlign.Center)
         .width('90%')
         .backgroundColor($r('app.color.text_blue'))
@@ -168,5 +146,24 @@ export default struct MePageComponent {
     .width('100%')
     .height('100%')
     .backgroundColor($r('app.color.CE7E7E7'))
+  }
+
+  @Styles  commonRowStyle(){
+    .width('100%')
+    .height(45)
+    .padding({ left: 10, right: 10 })
+    .borderRadius(8)
+    .backgroundColor($r('app.color.white'))
+    .margin({ top: 10 })
+  }
+
+  @Builder
+  SingleText(text: string) {
+    Text(text)
+      .fontSize(12)
+      .maxLines(1)
+      .textAlign(TextAlign.Start)
+      .textOverflow({ overflow: TextOverflow.Ellipsis })
+      .fontColor($r('app.color.text_blue'))
   }
 }
