@@ -2,7 +2,7 @@ import { HMRouter, HMRouterMgr } from "@hadss/hmrouter";
 import { NavBar } from "@peakmain/library";
 import { ToastUtil } from "@pura/harmony-utils";
 import dataManager from "../core/DataManager";
-import { NavJsonEntity, NavJsonEntityArticles } from "../models/models";
+import { NavJsonEntity, NavJsonEntityArticles, WebPageModel } from "../models/models";
 import RoutePath from "../RoutePath";
 
 // 定义类型别名
@@ -10,14 +10,16 @@ interface ContentItem {
   title: string;
   items: string[];
 }
-
+/**
+ * navigation page
+ */
 @HMRouter({ pageUrl: RoutePath.NavigationPageComponent })
 @Component
 export default struct NavigationPageComponent {
   @State private dataList: NavJsonEntity[] = []
   @State private currentSection: number = 0
   // 滚动控制器
-  leftScrollController: Scroller = new Scroller();
+  // leftScrollController: Scroller = new Scroller();
   rightScrollController: Scroller = new Scroller();
 
   build() {
@@ -56,7 +58,7 @@ export default struct NavigationPageComponent {
 
   @Builder
   BuildLeftCategories() {
-    Scroll(this.leftScrollController) {
+    Scroll() {
       Column() {
         ForEach(this.dataList, (category: NavJsonEntity, index: number) => {
           ListItem() {
@@ -80,33 +82,16 @@ export default struct NavigationPageComponent {
 
   @Builder
   BuildRightContent() {
-    Scroll(this.rightScrollController) {
-      Column() {
-        ForEach(this.dataList, (indexEntity: NavJsonEntity) => {
-          Column() {
-            Text(indexEntity.name)
-              .fontSize(20)
-              .margin({ bottom: 10 });
-
-            Column() {
-              ForEach(indexEntity.articles, (item: NavJsonEntityArticles) => {
-                Text(item.title)
-                  .fontSize(12)
-                  .padding(10)
-                  .maxLines(1)
-                  .ellipsisMode(EllipsisMode.END)
-              })
-            }
-            .width('100%')
-            .borderRadius(8)
-            .backgroundColor('#f8f9fa')
-            .margin({ bottom: 20 })
-          }
-          .id(indexEntity.cid + "") // 为每个分类设置锚点
-        })
-      }
+    List({ scroller: this.rightScrollController }) {
+      ForEach(this.dataList, (indexEntity: NavJsonEntity) => {
+        ListItem() {
+          this.NavigationItemCard(indexEntity)
+        }
+        .id(indexEntity.cid + "") // 为每个分类设置锚点
+      })
     }
     .width('70%')
+    .alignListItem(ListItemAlign.Center)
   }
 
   // 滚动到指定分类
@@ -121,5 +106,37 @@ export default struct NavigationPageComponent {
     // })
     this.rightScrollController.scrollToIndex(index)
   }
+
+  @Builder
+  NavigationItemCard(indexEntity: NavJsonEntity) {
+    Column() {
+      Text(indexEntity.name)
+        .fontSize(20)
+        .margin({ bottom: 10 });
+
+      Column() {
+        ForEach(indexEntity.articles, (item: NavJsonEntityArticles) => {
+          Text(item.title)
+            .fontSize(12)
+            .padding(10)
+            .maxLines(1)
+            .ellipsisMode(EllipsisMode.END)
+            .onClick(() => {
+              //跳转
+              HMRouterMgr.push({
+                pageUrl: RoutePath.WebViewPage,
+                param: new WebPageModel(item.link, item.title)
+              })
+            })
+        })
+      }
+      .width('100%')
+      .borderRadius(8)
+      .backgroundColor('#f8f9fa')
+      .margin({ bottom: 20 })
+    }
+  }
 }
+
+
 
