@@ -1,6 +1,7 @@
 # wan_android_harmonyos-master
 
 #### 介绍
+这是作者学习时开发的项目，开发时不懂ArkTs也不懂harmonyOs,完全边用边学。
 玩Android的harmonyos版本，目前持续开发中...
 #### 关于作者
 
